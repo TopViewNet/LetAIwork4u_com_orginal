@@ -1,0 +1,153 @@
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  /* Increase touch targets for better mobile interaction */
+  button,
+  a.button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve readability on small screens */
+  p,
+  li,
+  span {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Ensure proper spacing on mobile */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Prevent horizontal overflow */
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+
+  /* Product cards on mobile */
+  .grid-cols-1 > div {
+    margin-bottom: 20px;
+  }
+
+  /* Improve product card layout on mobile */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .product-card .h-48 {
+    height: 180px;
+  }
+
+  .product-card .p-6 {
+    padding: 16px;
+  }
+
+  /* Improve table display on mobile */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Improve form elements on mobile */
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Hide scrollbars while allowing scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Improve tap targets for mobile navigation */
+.mobile-nav-item {
+  padding: 12px 16px;
+}
+
+/* Fix for iOS Safari 100vh issue */
+.min-h-screen {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Improve image loading on mobile */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure buttons are easily tappable */
+button,
+.button {
+  touch-action: manipulation;
+}
+
+/* RTL support for mobile */
+[dir="rtl"] .ml-1,
+[dir="rtl"] .ml-2,
+[dir="rtl"] .ml-4 {
+  margin-left: 0;
+}
+
+[dir="rtl"] .ml-1 {
+  margin-right: 0.25rem;
+}
+
+[dir="rtl"] .ml-2 {
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .ml-4 {
+  margin-right: 1rem;
+}
+
+[dir="rtl"] .mr-1,
+[dir="rtl"] .mr-2,
+[dir="rtl"] .mr-4 {
+  margin-right: 0;
+}
+
+[dir="rtl"] .mr-1 {
+  margin-left: 0.25rem;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .mr-4 {
+  margin-left: 1rem;
+}
+
+/* Fix for product cards on mobile */
+@media (max-width: 640px) {
+  .min-h-\[4\.5rem\] {
+    min-height: 5.5rem;
+  }
+}
