@@ -32,6 +32,8 @@ export default function ContactPage() {
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -42,27 +44,41 @@ export default function ContactPage() {
     setFormState((prev) => ({ ...prev, product: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, you would send the form data to your backend
-    console.log("Form submitted:", formState)
+    setIsSubmitting(true)
+    setSubmitError("")
 
-    // Show success message
-    setIsSubmitted(true)
-
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormState({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        product: "",
-        plan: "",
-        message: "",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
       })
-    }, 5000)
+
+      if (!response.ok) {
+        throw new Error("Contact request failed")
+      }
+
+      setIsSubmitted(true)
+
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormState({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          product: "",
+          plan: "",
+          message: "",
+        })
+      }, 5000)
+    } catch {
+      setSubmitError("Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie direkt an contact@letaiwork4u.com.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -218,8 +234,10 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  {t("contact.submit")}
+                {submitError && <p className="text-sm text-red-400">{submitError}</p>}
+
+                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white" disabled={isSubmitting}>
+                  {isSubmitting ? "Wird gesendet..." : t("contact.submit")}
                 </Button>
               </form>
             )}

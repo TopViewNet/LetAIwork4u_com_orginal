@@ -1,125 +1,198 @@
 import Link from "next/link"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { Bot, CalendarDays, Heart, MessageCircle, Repeat2, Rocket, Share2, Sparkles } from "lucide-react"
+
+const featuredPosts = [
+  {
+    id: "letaiwork4u-platform-roadmap",
+    type: "Projektupdate",
+    author: "LetAIwork4u Lab",
+    title: "Aus der Webseite wird eine AI-Plattform",
+    excerpt:
+      "Wir verbinden Website, Voicebot, LegalTech-Produkte und KI-News zu einem gemeinsamen LetAIwork4u Oekosystem.",
+    date: "Mai 2026",
+    tags: ["Platform", "Voicebot", "LegalTech"],
+    stats: { likes: 42, comments: 8, reposts: 5 },
+  },
+  {
+    id: "anwaltsoft-bea-dms",
+    type: "Produkt",
+    author: "AnwaltSoft",
+    title: "CRM, DMS und beA-Workflows fuer Kanzleien",
+    excerpt:
+      "AnwaltSoft wird als LegalTech-Produkt unter LetAIwork4u positioniert, mit beA4Outlook und DMS als klare Module.",
+    date: "Mai 2026",
+    tags: ["AnwaltSoft", "DMS", "beA"],
+    stats: { likes: 31, comments: 4, reposts: 3 },
+  },
+  {
+    id: "local-ai-gemma-lab",
+    type: "AI Lab",
+    author: "AI Radar",
+    title: "Lokale KI testen: kleine Modelle, echte Workflows",
+    excerpt:
+      "Tests mit lokalen Modellen wie Gemma zeigen, wo Datenschutz, Kostenkontrolle und Geschwindigkeit zusammenkommen.",
+    date: "Mai 2026",
+    tags: ["Local AI", "Gemma", "Automation"],
+    stats: { likes: 55, comments: 12, reposts: 9 },
+  },
+]
+
+const channels = [
+  "Alle",
+  "KI News",
+  "Projekte",
+  "Voicebots",
+  "LegalTech",
+  "Robotics",
+  "Open Source",
+  "Praxiswissen",
+]
 
 export default function NewsPage() {
-  const articles = [
-    {
-      id: "ai-trends-2023",
-      title: "Top AI Trends to Watch in 2023",
-      date: "June 15, 2023",
-      excerpt:
-        "Explore the most significant AI trends that are shaping industries and transforming business operations in 2023.",
-      category: "Industry Insights",
-      image: "/evolving-ai-landscape.png",
-    },
-    {
-      id: "chatbot-revolution",
-      title: "How Enterprise Chatbots Are Revolutionizing Customer Service",
-      date: "May 28, 2023",
-      excerpt:
-        "Learn how AI-powered chatbots are transforming customer service operations and delivering exceptional experiences.",
-      category: "Product Insights",
-      image: "/friendly-chatbot-interface.png",
-    },
-    {
-      id: "voice-assistant-guide",
-      title: "The Complete Guide to Implementing Voice Assistants in Your Business",
-      date: "May 10, 2023",
-      excerpt:
-        "A comprehensive guide to selecting, implementing, and optimizing voice assistants for various business applications.",
-      category: "Implementation",
-      image: "/connected-conversations.png",
-    },
-    {
-      id: "ai-healthcare",
-      title: "AI in Healthcare: Transforming Patient Care and Operations",
-      date: "April 22, 2023",
-      excerpt:
-        "Discover how healthcare organizations are leveraging AI to improve patient outcomes and streamline operations.",
-      category: "Industry Solutions",
-      image: "/interconnected-health.png",
-    },
-    {
-      id: "automation-roi",
-      title: "Measuring ROI from Business Process Automation",
-      date: "April 5, 2023",
-      excerpt:
-        "Practical approaches to measuring and maximizing the return on investment from your automation initiatives.",
-      category: "Business Impact",
-      image: "/interconnected-automation.png",
-    },
-    {
-      id: "predictive-analytics-retail",
-      title: "How Retailers Are Using Predictive Analytics to Stay Ahead",
-      date: "March 18, 2023",
-      excerpt:
-        "Case studies of retailers leveraging predictive analytics to optimize inventory, personalize marketing, and increase sales.",
-      category: "Industry Solutions",
-      image: "/placeholder.svg?height=400&width=600&query=Retail analytics dashboard",
-    },
-  ]
-
   return (
-    <div className="container px-4 md:px-6 py-20 pt-32">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">News & Insights</h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Stay updated with the latest trends, insights, and news from the world of AI and digital transformation.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {articles.map((article) => (
-          <div key={article.id} className="bg-card rounded-lg overflow-hidden border flex flex-col">
-            <div className="h-48 overflow-hidden">
-              <img
-                src={article.image || "/placeholder.svg"}
-                alt={article.title}
-                className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-              />
-            </div>
-            <div className="p-6 flex-grow flex flex-col">
-              <div className="mb-2">
-                <span className="text-sm font-medium text-primary">{article.category}</span>
-              </div>
-              <h3 className="text-xl font-bold mb-2">{article.title}</h3>
-              <p className="text-muted-foreground mb-4 flex-grow">{article.excerpt}</p>
-              <div className="flex items-center justify-between mt-auto">
-                <span className="text-sm text-muted-foreground">{article.date}</span>
-                <Button variant="link" className="p-0 h-auto" asChild>
-                  <Link href={`/news/${article.id}`} className="flex items-center gap-1 text-primary">
-                    Read More <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <section className="border-b border-white/10 px-4 pb-10 pt-32 md:px-6">
+        <div className="container grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div>
+            <Badge className="mb-5 bg-cyan-300 text-slate-950 hover:bg-cyan-300">KI Feed</Badge>
+            <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">
+              News, Projekte und Gedanken aus der Welt der KI.
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+              Der neue Social-Bereich fuer LetAIwork4u: Updates, Produktfortschritt, AI-Trends, Experimente und
+              spaeter Community-Beitraege mit Profilen, Kommentaren und Likes.
+            </p>
           </div>
-        ))}
-      </div>
-
-      <div className="mt-12 text-center">
-        <Button variant="outline" size="lg">
-          Load More Articles
-        </Button>
-      </div>
-
-      <div className="mt-16 bg-muted p-8 rounded-lg">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-          <p className="text-muted-foreground mb-6">
-            Get the latest insights, trends, and news delivered straight to your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            />
-            <Button>Subscribe</Button>
+          <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-cyan-300 text-slate-950">
+                <Sparkles className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="font-semibold">Plattform-MVP</p>
+                <p className="text-sm text-slate-400">Admin-Posts jetzt, Nutzerfunktionen als naechster Schritt.</p>
+              </div>
+            </div>
+            <div className="mt-5 grid grid-cols-3 gap-3 text-center">
+              <div className="rounded-md bg-slate-900 p-3">
+                <p className="text-2xl font-bold">3</p>
+                <p className="text-xs text-slate-400">Feeds</p>
+              </div>
+              <div className="rounded-md bg-slate-900 p-3">
+                <p className="text-2xl font-bold">8</p>
+                <p className="text-xs text-slate-400">Kanaele</p>
+              </div>
+              <div className="rounded-md bg-slate-900 p-3">
+                <p className="text-2xl font-bold">1</p>
+                <p className="text-xs text-slate-400">Oekosystem</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <main className="container grid gap-8 px-4 py-10 md:px-6 lg:grid-cols-[220px_1fr_280px]">
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 rounded-lg border border-white/10 bg-white/5 p-4">
+            <h2 className="mb-3 text-sm font-semibold uppercase text-slate-400">Kanaele</h2>
+            <nav className="grid gap-1">
+              {channels.map((channel) => (
+                <button
+                  key={channel}
+                  className="rounded-md px-3 py-2 text-left text-sm text-slate-300 hover:bg-white/10 hover:text-white"
+                >
+                  {channel}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </aside>
+
+        <section className="grid gap-5">
+          <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900">
+                <Bot className="h-5 w-5 text-cyan-300" />
+              </span>
+              <div className="flex-1">
+                <p className="text-sm text-slate-400">Was gibt es Neues?</p>
+                <p className="text-slate-200">Admin-Composer: News, Projektupdate oder KI-Fundstueck vorbereiten</p>
+              </div>
+              <Button asChild className="bg-cyan-300 text-slate-950 hover:bg-cyan-200">
+                <Link href="/contact?product=KI%20Feed">Beitrag vorschlagen</Link>
+              </Button>
+            </div>
+          </div>
+
+          {featuredPosts.map((post) => (
+            <article key={post.id} className="rounded-lg border border-white/10 bg-white/5 p-5">
+              <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                <Badge variant="outline" className="border-cyan-300/30 text-cyan-200">
+                  {post.type}
+                </Badge>
+                <span>{post.author}</span>
+                <span className="flex items-center gap-1">
+                  <CalendarDays className="h-4 w-4" />
+                  {post.date}
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold">{post.title}</h2>
+              <p className="mt-3 leading-7 text-slate-300">{post.excerpt}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="rounded-md bg-slate-900 px-2 py-1 text-xs text-slate-300">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-sm text-slate-400">
+                <div className="flex gap-4">
+                  <span className="flex items-center gap-1">
+                    <Heart className="h-4 w-4" />
+                    {post.stats.likes}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <MessageCircle className="h-4 w-4" />
+                    {post.stats.comments}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Repeat2 className="h-4 w-4" />
+                    {post.stats.reposts}
+                  </span>
+                </div>
+                <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white">
+                  <Share2 className="mr-2 h-4 w-4" />
+                  Teilen
+                </Button>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <aside className="grid h-fit gap-5">
+          <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+            <h2 className="flex items-center gap-2 font-semibold">
+              <Rocket className="h-5 w-5 text-cyan-300" />
+              Naechste Ausbaustufe
+            </h2>
+            <ul className="mt-4 grid gap-3 text-sm text-slate-300">
+              <li>Nutzer-Accounts und Profile</li>
+              <li>Kommentare, Likes und gespeicherte Posts</li>
+              <li>Admin-Dashboard fuer News und Projekte</li>
+              <li>Datenbank fuer Feed, Kontakte und Leads</li>
+            </ul>
+          </div>
+          <div className="rounded-lg border border-white/10 bg-white/5 p-5">
+            <h2 className="font-semibold">Brand-Klammer</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              LetAIwork4u bleibt die Muttermarke. AnwaltSoft, beA4Outlook und DMS werden als Produktlinien sichtbar
+              eingebettet.
+            </p>
+          </div>
+        </aside>
+      </main>
     </div>
   )
 }

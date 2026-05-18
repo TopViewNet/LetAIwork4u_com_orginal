@@ -7,18 +7,23 @@ function HeroDemo() {
       title={
         <>
           <AnimatedTextCycle
-            words={["AI", "Automation", "Intelligence", "Innovation"]}
+            words={["LegalTech", "Voicebots", "Robotik", "Immobilien", "Aviation"]}
             interval={3000}
             className="text-primary"
           />{" "}
-          that works for you.
+          unter einer starken AI-Marke.
         </>
       }
-      subtitle="Transform your workflow with LETAIWORK4U's intelligent automation. Simple, powerful, reliable."
+      subtitle="LetAIwork4u verbindet hochwertige Software, KI-Automation und neue Plattformideen. AnwaltSoft und beA4Outlook werden als Premium-Flagship fuer Kanzleien aufgebaut."
       actions={[
         {
-          label: "Try our CRM Demo",
-          href: "https://letaiwork4crm.vercel.app/",
+          label: "Plattformen ansehen",
+          href: "/platforms",
+          variant: "default",
+        },
+        {
+          label: "AnwaltSoft entdecken",
+          href: "/platforms/anwaltsoft",
           variant: "outline",
         },
       ]}
