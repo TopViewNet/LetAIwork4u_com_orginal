@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Bot, Menu, X } from "lucide-react"
+import { Bot, Menu, PhoneCall, X } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 
@@ -15,6 +15,8 @@ const navItems = [
   { href: "/pricing", label: "Preise" },
   { href: "/contact", label: "Kontakt" },
 ]
+
+const voiceAgentUrl = "https://letaiwork4uagent.vercel.app"
 
 export function Header() {
   const pathname = usePathname()
@@ -48,14 +50,25 @@ export function Header() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          aria-label="Navigation"
-          className="rounded-md p-2 text-white md:hidden"
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <a
+            href={voiceAgentUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden items-center gap-2 rounded-md bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 md:inline-flex"
+          >
+            <PhoneCall className="h-4 w-4" />
+            Voicebot testen
+          </a>
+          <button
+            type="button"
+            aria-label="Navigation"
+            className="rounded-md p-2 text-white md:hidden"
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
       {open && (
         <nav className="border-t border-white/10 bg-slate-950 px-4 py-3 md:hidden">
@@ -69,6 +82,16 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <a
+            href={voiceAgentUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 flex items-center justify-center gap-2 rounded-md bg-cyan-300 px-3 py-3 text-sm font-semibold text-slate-950"
+            onClick={() => setOpen(false)}
+          >
+            <PhoneCall className="h-4 w-4" />
+            Voicebot testen
+          </a>
         </nav>
       )}
     </header>
