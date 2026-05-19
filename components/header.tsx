@@ -5,15 +5,17 @@ import { usePathname } from "next/navigation"
 import { Bot, Menu, PhoneCall, X } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
+import { LanguageSwitcher } from "@/components/language-switcher"
+import { useLanguage } from "@/contexts/language-context"
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/platforms", label: "Plattformen" },
-  { href: "/products", label: "Produkte" },
-  { href: "/solutions", label: "Loesungen" },
-  { href: "/news", label: "KI Feed" },
-  { href: "/pricing", label: "Preise" },
-  { href: "/contact", label: "Kontakt" },
+  { href: "/", labelKey: "nav.home" },
+  { href: "/platforms", labelKey: "nav.platforms" },
+  { href: "/products", labelKey: "nav.products" },
+  { href: "/solutions", labelKey: "nav.solutions" },
+  { href: "/news", labelKey: "nav.news" },
+  { href: "/pricing", labelKey: "nav.pricing" },
+  { href: "/contact", labelKey: "nav.contact" },
 ]
 
 const voiceAgentUrl = "https://letaiwork4uagent.vercel.app"
@@ -21,6 +23,7 @@ const voiceAgentUrl = "https://letaiwork4uagent.vercel.app"
 export function Header() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
@@ -35,30 +38,31 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white",
+                "rounded-md px-2.5 py-2 text-sm text-slate-300 transition hover:bg-white/10 hover:text-white xl:px-3",
                 pathname === item.href && "bg-white text-slate-950 hover:bg-white hover:text-slate-950",
               )}
             >
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
           <a
             href={voiceAgentUrl}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 rounded-md bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 md:inline-flex"
+            className="hidden items-center gap-2 rounded-md bg-cyan-300 px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 xl:inline-flex"
           >
             <PhoneCall className="h-4 w-4" />
-            Voicebot testen
+            {t("nav.voiceAgent")}
           </a>
           <button
             type="button"
@@ -79,7 +83,7 @@ export function Header() {
               className="block rounded-md px-3 py-3 text-sm text-slate-200 hover:bg-white/10"
               onClick={() => setOpen(false)}
             >
-              {item.label}
+              {t(item.labelKey)}
             </Link>
           ))}
           <a
@@ -90,7 +94,7 @@ export function Header() {
             onClick={() => setOpen(false)}
           >
             <PhoneCall className="h-4 w-4" />
-            Voicebot testen
+            {t("nav.voiceAgent")}
           </a>
         </nav>
       )}
