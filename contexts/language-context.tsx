@@ -81,6 +81,14 @@ const defaultTranslations: Record<string, string> = {
   "home.ecosystem.desc":
     "AnwaltSoft und beA4Outlook werden als Flagship-Produkte aufgebaut. Weitere Plattformen koennen sauber wachsen, ohne die Marke jedes Mal neu zu erfinden.",
   "home.ecosystem.cta": "Alle Plattformen ansehen",
+  "platform.anwaltsoft.eyebrow": "LegalTech Plattform",
+  "platform.anwaltsoft.name": "AnwaltSoft",
+  "platform.anwaltsoft.summary":
+    "DMS, Kanzlei-Workflows, Dokumente, beA-nahe Prozesse und KI-Unterstuetzung fuer moderne Kanzleien.",
+  "platform.bea4outlook.eyebrow": "Flagship Produkt",
+  "platform.bea4outlook.name": "beA4Outlook",
+  "platform.bea4outlook.summary":
+    "beA-Nachrichten und Outlook E-Mails in einer vertrauten Arbeitsumgebung, inklusive Hashdateien und Zertifikatslogin.",
   "home.discover.title": "Discover our AI-powered solutions",
   "home.discover.desc":
     "LETAIWORK4U provides everything you need to transform your business with cutting-edge AI technology.",
@@ -126,6 +134,18 @@ const defaultTranslations: Record<string, string> = {
   "capabilities.search.desc": "Finden Sie schneller, was Sie brauchen, mit KI-Suche, die Kontext und Absicht versteht.",
   "testimonials.title": "What Our Customers Say",
   "testimonials.subtitle": "Don't just take our word for it - hear from some of our satisfied customers",
+  "testimonials.0.role": "CTO bei TechCorp",
+  "testimonials.0.content":
+    "LETAIWORK4U hat veraendert, wie unser Team mit KI arbeitet. Die Loesungen sind intuitiv und der Support ist stark.",
+  "testimonials.1.role": "Produktmanagerin",
+  "testimonials.1.content":
+    "Ich habe viele KI-Plattformen getestet, aber LETAIWORK4U ueberzeugt durch einfache Nutzung und starke Funktionen.",
+  "testimonials.2.role": "Startup-Gruender",
+  "testimonials.2.content":
+    "Als Gruender brauchte ich verlaessliche KI-Loesungen, die skalieren koennen. LETAIWORK4U hat meine Erwartungen uebertroffen.",
+  "testimonials.3.role": "Marketing Director",
+  "testimonials.3.content":
+    "Die KI-Analytics geben uns Einblicke, die wir vorher nicht hatten. Das hat unsere Marketingstrategie deutlich verbessert.",
   "footer.desc": "Muttermarke fuer KI-Integration, Voicebots, LegalTech, Software, Webdesign und neue AI-Projekte.",
   "footer.ecosystem": "Oekosystem",
   "contact.title": "Kontakt",
@@ -522,12 +542,143 @@ const translations: Partial<Record<Language, Record<string, string>>> = {
   },
 }
 
+const supplementalTranslations: Partial<Record<Language, Record<string, string>>> = {
+  en: {
+    "platform.anwaltsoft.eyebrow": "LegalTech Platform",
+    "platform.anwaltsoft.summary":
+      "DMS, law-firm workflows, documents, beA-adjacent processes, and AI support for modern legal teams.",
+    "platform.bea4outlook.eyebrow": "Flagship Product",
+    "platform.bea4outlook.summary":
+      "beA messages and Outlook email in one familiar workspace, including hash files and certificate-based login.",
+    "testimonials.0.role": "CTO at TechCorp",
+    "testimonials.0.content":
+      "LETAIWORK4U has completely transformed how our team works with AI. The solutions are intuitive and the support is outstanding.",
+    "testimonials.1.role": "Product Manager",
+    "testimonials.1.content":
+      "I have tried many AI platforms, but LETAIWORK4U stands out for ease of use and powerful capabilities.",
+    "testimonials.2.role": "Startup Founder",
+    "testimonials.2.content":
+      "As a founder, I needed reliable AI solutions that could scale. LETAIWORK4U exceeded my expectations.",
+    "testimonials.3.role": "Marketing Director",
+    "testimonials.3.content":
+      "The AI analytics features have given us insights we never had before. They changed how we plan marketing.",
+  },
+  es: {
+    "hero.subtitle":
+      "LetAIwork4u conecta software premium, automatizacion con IA y nuevas ideas de plataforma. AnwaltSoft y beA4Outlook se construyen como productos insignia para despachos.",
+    "spline.cardText":
+      "LETAIWORK4U impulsa tu empresa con soluciones inteligentes de IA que transforman procesos y aumentan la productividad.",
+    "home.ecosystem.desc":
+      "AnwaltSoft y beA4Outlook se desarrollan como productos insignia. Otras plataformas pueden crecer de forma clara sin reinventar la marca.",
+    "home.discover.desc":
+      "LETAIWORK4U ofrece lo necesario para transformar tu negocio con tecnologia de IA avanzada.",
+    "features.subtitle": "Descubre por que LETAIWORK4U es un socio de IA preferido por empresas modernas.",
+    "features.developers.title": "Creado para desarrolladores",
+    "features.developers.desc": "Para equipos tecnicos e innovadores que quieren usar IA en proyectos reales.",
+    "features.ease.title": "Facil de usar",
+    "features.ease.desc": "Soluciones de IA intuitivas, accesibles y listas para el trabajo diario.",
+    "features.pricing.title": "Precios transparentes",
+    "features.pricing.desc": "Precios claros y previsibles, sin costes ocultos.",
+    "features.uptime.title": "Alta disponibilidad",
+    "features.uptime.desc": "Infraestructura robusta para que tus servicios de IA esten disponibles.",
+    "features.multi.title": "Arquitectura multiusuario",
+    "features.multi.desc": "Comparte recursos de IA con control de acceso por roles.",
+    "features.support.title": "Soporte IA 24/7",
+    "features.support.desc": "Ayuda continua con soporte impulsado por IA y expertos humanos.",
+    "features.improvement.title": "Mejora continua",
+    "features.improvement.desc": "Los modelos mejoran con el tiempo para entregar mejores resultados.",
+    "features.custom.title": "Soluciones a medida",
+    "features.custom.desc": "Adaptamos la IA a tus procesos, sector y objetivos.",
+    "capabilities.subtitle": "Explora funciones innovadoras de IA en tarjetas interactivas.",
+    "capabilities.automation.title": "Automatizacion con IA",
+    "capabilities.automation.desc": "Optimiza flujos de trabajo con automatizacion inteligente.",
+    "capabilities.analytics.title": "Analitica avanzada",
+    "capabilities.analytics.desc": "Convierte tus datos en informacion accionable.",
+    "capabilities.security.title": "Integracion segura de IA",
+    "capabilities.security.desc": "Seguridad empresarial para implementaciones y datos.",
+    "capabilities.custom.title": "Soluciones IA a medida",
+    "capabilities.custom.desc": "IA disenada para tu industria y tus retos.",
+    "capabilities.search.title": "Busqueda inteligente",
+    "capabilities.search.desc": "Encuentra informacion con busqueda que entiende contexto e intencion.",
+    "platform.anwaltsoft.eyebrow": "Plataforma LegalTech",
+    "platform.anwaltsoft.summary": "DMS, flujos de despacho, documentos, procesos cercanos a beA y apoyo de IA.",
+    "platform.bea4outlook.eyebrow": "Producto insignia",
+    "platform.bea4outlook.summary": "Mensajes beA y correos Outlook en un entorno familiar, con hash y certificado.",
+    "testimonials.subtitle": "Escucha lo que dicen clientes satisfechos.",
+    "testimonials.0.role": "CTO en TechCorp",
+    "testimonials.0.content": "LETAIWORK4U cambio nuestra forma de trabajar con IA. Es intuitivo y el soporte es excelente.",
+    "testimonials.1.role": "Product Manager",
+    "testimonials.1.content": "He probado muchas plataformas de IA; LETAIWORK4U destaca por facilidad y potencia.",
+    "testimonials.2.role": "Fundador de startup",
+    "testimonials.2.content": "Necesitaba IA fiable y escalable. LETAIWORK4U supero mis expectativas.",
+    "testimonials.3.role": "Directora de marketing",
+    "testimonials.3.content": "La analitica con IA nos dio informacion nueva para mejorar la estrategia.",
+    "footer.desc": "Marca paraguas para integracion de IA, voicebots, LegalTech, software, webdesign y nuevos proyectos.",
+  },
+  it: {
+    "hero.subtitle":
+      "LetAIwork4u unisce software premium, automazione AI e nuove idee di piattaforma. AnwaltSoft e beA4Outlook sono prodotti flagship per studi legali.",
+    "spline.cardText":
+      "LETAIWORK4U porta l'AI nei processi aziendali con soluzioni intelligenti che migliorano workflow e produttivita.",
+    "home.ecosystem.desc":
+      "AnwaltSoft e beA4Outlook crescono come prodotti flagship. Altre piattaforme possono evolvere senza reinventare il brand.",
+    "home.discover.desc": "LETAIWORK4U offre strumenti per trasformare il business con tecnologia AI avanzata.",
+    "features.subtitle": "Scopri perche LETAIWORK4U e un partner AI preferito dalle aziende moderne.",
+    "features.developers.title": "Creato per sviluppatori",
+    "features.developers.desc": "Per team tecnici e innovatori che vogliono usare l'AI in progetti concreti.",
+    "features.ease.title": "Facile da usare",
+    "features.ease.desc": "Soluzioni AI intuitive e accessibili per il lavoro quotidiano.",
+    "features.pricing.title": "Prezzi trasparenti",
+    "features.pricing.desc": "Prezzi chiari e prevedibili, senza costi nascosti.",
+    "features.uptime.title": "Alta disponibilita",
+    "features.uptime.desc": "Infrastruttura robusta per mantenere disponibili i servizi AI.",
+    "features.multi.title": "Architettura multi-tenant",
+    "features.multi.desc": "Condivisione sicura delle risorse AI con accessi basati sui ruoli.",
+    "features.support.title": "Supporto AI 24/7",
+    "features.support.desc": "Aiuto continuo con supporto AI ed esperti umani.",
+    "features.improvement.title": "Miglioramento continuo",
+    "features.improvement.desc": "I modelli migliorano nel tempo per risultati sempre migliori.",
+    "features.custom.title": "Soluzioni su misura",
+    "features.custom.desc": "Adattiamo l'AI a processi, settore e obiettivi.",
+    "capabilities.subtitle": "Scopri funzioni AI innovative con card interattive.",
+    "capabilities.automation.title": "Automazione AI",
+    "capabilities.automation.desc": "Ottimizza i workflow con automazione intelligente.",
+    "capabilities.analytics.title": "Analisi avanzata",
+    "capabilities.analytics.desc": "Trasforma i dati in insight utilizzabili.",
+    "capabilities.security.title": "Integrazione AI sicura",
+    "capabilities.security.desc": "Sicurezza enterprise per implementazioni e dati.",
+    "capabilities.custom.title": "Soluzioni AI personalizzate",
+    "capabilities.custom.desc": "AI progettata per il tuo settore e le tue sfide.",
+    "capabilities.search.title": "Ricerca intelligente",
+    "capabilities.search.desc": "Trova informazioni con una ricerca che capisce contesto e intenzione.",
+    "platform.anwaltsoft.eyebrow": "Piattaforma LegalTech",
+    "platform.anwaltsoft.summary": "DMS, workflow legali, documenti, processi vicini a beA e supporto AI.",
+    "platform.bea4outlook.eyebrow": "Prodotto flagship",
+    "platform.bea4outlook.summary": "Messaggi beA e email Outlook in un ambiente familiare, con hash e certificato.",
+    "testimonials.subtitle": "Ascolta cosa dicono alcuni clienti soddisfatti.",
+    "testimonials.0.role": "CTO presso TechCorp",
+    "testimonials.0.content": "LETAIWORK4U ha cambiato il modo in cui lavoriamo con l'AI. Intuitivo e con ottimo supporto.",
+    "testimonials.1.role": "Product Manager",
+    "testimonials.1.content": "Ho provato molte piattaforme AI; LETAIWORK4U spicca per facilita e potenza.",
+    "testimonials.2.role": "Fondatore startup",
+    "testimonials.2.content": "Avevo bisogno di AI affidabile e scalabile. LETAIWORK4U ha superato le aspettative.",
+    "testimonials.3.role": "Marketing Director",
+    "testimonials.3.content": "Le analytics AI ci hanno dato insight nuovi per migliorare la strategia.",
+    "footer.desc": "Brand ombrello per integrazione AI, voicebot, LegalTech, software, webdesign e nuovi progetti.",
+  },
+}
+
 const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("de")
   const currentLanguage = languageOptions.find((option) => option.code === language) ?? languageOptions[1]
-  const dictionary = translations[language] ?? defaultTranslations
+  const fallbackTranslations = language === "de" || language === "de-CH" ? defaultTranslations : translations.en ?? defaultTranslations
+  const dictionary = {
+    ...fallbackTranslations,
+    ...(translations[language] ?? {}),
+    ...(supplementalTranslations[language] ?? {}),
+  }
 
   useEffect(() => {
     const savedLanguage = window.localStorage.getItem("letaiwork4u-language") as Language | null

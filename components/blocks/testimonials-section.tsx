@@ -9,33 +9,29 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       name: "Alex Johnson",
-      role: "CTO at TechCorp",
-      content:
-        "LETAIWORK4U has completely transformed how our team works with AI. The solutions are intuitive and the support is outstanding.",
+      role: t("testimonials.0.role"),
+      content: t("testimonials.0.content"),
       avatar: "/diverse-group-city.png",
       initials: "AJ",
     },
     {
       name: "Samantha Lee",
-      role: "Product Manager",
-      content:
-        "I've tried many AI platforms, but LETAIWORK4U stands out for its ease of use and powerful capabilities. Highly recommended!",
+      role: t("testimonials.1.role"),
+      content: t("testimonials.1.content"),
       avatar: "/contemplative-artist.png",
       initials: "SL",
     },
     {
       name: "Michael Chen",
-      role: "Startup Founder",
-      content:
-        "As a startup founder, I needed reliable AI solutions that could scale. LETAIWORK4U exceeded my expectations in every way.",
+      role: t("testimonials.2.role"),
+      content: t("testimonials.2.content"),
       avatar: "/contemplative-man.png",
       initials: "MC",
     },
     {
       name: "Emily Rodriguez",
-      role: "Marketing Director",
-      content:
-        "The AI analytics features have given us insights we never had before. It's been a game-changer for our marketing strategy.",
+      role: t("testimonials.3.role"),
+      content: t("testimonials.3.content"),
       avatar: "/diverse-group-city.png",
       initials: "ER",
     },

@@ -33,9 +33,11 @@ export default function Home() {
                 className="rounded-lg border border-cyan-300/20 bg-white/5 p-5 transition hover:-translate-y-1 hover:bg-white/10"
               >
                 <div className={`mb-5 h-2 rounded-full bg-gradient-to-r ${platform.accent}`} />
-                <p className="text-sm uppercase tracking-wide text-cyan-200">{platform.eyebrow}</p>
-                <h3 className="mt-2 text-2xl font-bold">{platform.name}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-300">{platform.summary}</p>
+                <p className="text-sm uppercase tracking-wide text-cyan-200">
+                  {t(`platform.${platform.slug}.eyebrow`)}
+                </p>
+                <h3 className="mt-2 text-2xl font-bold">{t(`platform.${platform.slug}.name`)}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{t(`platform.${platform.slug}.summary`)}</p>
               </Link>
             ))}
           </div>
