@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Bot, Menu, PhoneCall, X } from "lucide-react"
+import { Bot, Menu, Mic, X } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { LanguageSwitcher } from "@/components/language-switcher"
@@ -53,17 +53,27 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <LanguageSwitcher />
+        <div className="flex items-center gap-2 md:gap-4">
           <a
             href={voiceAgentUrl}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 rounded-md bg-cyan-300 px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 xl:inline-flex"
+            className="group relative hidden md:inline-flex"
           >
-            <PhoneCall className="h-4 w-4" />
-            {t("nav.voiceAgent")}
+            <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 opacity-75 blur-sm transition duration-200 group-hover:opacity-100 group-focus-visible:opacity-100" />
+            <span className="relative flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-sm font-medium text-white shadow-lg transition group-hover:-translate-y-0.5">
+              <Mic className="h-4 w-4" />
+              <span className="hidden xl:inline">{t("nav.voiceAgent")}</span>
+              <span className="absolute right-0 top-0 -mr-1 -mt-1 h-3 w-3 animate-ping rounded-full bg-white opacity-75" />
+            </span>
           </a>
+          <LanguageSwitcher />
+          <Link
+            href="/contact"
+            className="hidden items-center justify-center rounded-md bg-cyan-300 px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 xl:inline-flex"
+          >
+            Get Started
+          </Link>
           <button
             type="button"
             aria-label="Navigation"
@@ -90,11 +100,15 @@ export function Header() {
             href={voiceAgentUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-2 flex items-center justify-center gap-2 rounded-md bg-cyan-300 px-3 py-3 text-sm font-semibold text-slate-950"
+            className="group relative mt-3 flex justify-center"
             onClick={() => setOpen(false)}
           >
-            <PhoneCall className="h-4 w-4" />
-            {t("nav.voiceAgent")}
+            <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 opacity-75 blur-sm" />
+            <span className="relative flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-3 text-sm font-medium text-white shadow-lg">
+              <Mic className="h-4 w-4" />
+              {t("nav.voiceAgent")}
+              <span className="absolute right-0 top-0 -mr-1 -mt-1 h-3 w-3 animate-ping rounded-full bg-white opacity-75" />
+            </span>
           </a>
         </nav>
       )}

@@ -18,11 +18,11 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          className="inline-flex h-9 items-center gap-2 rounded-md border border-white/15 bg-white/5 px-3 text-sm font-medium text-white transition hover:bg-white/10"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           aria-label={t("nav.language")}
         >
-          <Globe2 className="h-4 w-4" />
-          <span className="min-w-6 text-left">{currentLanguage.shortLabel}</span>
+          <Globe2 className="h-5 w-5" />
+          <span className="sr-only">{currentLanguage.label}</span>
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="max-h-[70vh] w-64 overflow-y-auto border-slate-800 bg-slate-950 text-slate-100">
