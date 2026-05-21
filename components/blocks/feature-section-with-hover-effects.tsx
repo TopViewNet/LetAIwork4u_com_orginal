@@ -13,47 +13,49 @@ import {
   IconRouteAltLeft,
   IconTerminal2,
 } from "@tabler/icons-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export function FeaturesSectionWithHoverEffects() {
+  const { t } = useLanguage()
   const features = [
     {
-      title: "Built for developers",
-      description: "Designed for engineers, developers, and innovators who want to leverage AI in their projects.",
+      title: t("features.developers.title"),
+      description: t("features.developers.desc"),
       icon: <IconTerminal2 />,
     },
     {
-      title: "Ease of use",
-      description: "Our AI solutions are intuitive and accessible, requiring minimal technical expertise.",
+      title: t("features.ease.title"),
+      description: t("features.ease.desc"),
       icon: <IconEaseInOut />,
     },
     {
-      title: "Transparent pricing",
-      description: "Clear, predictable pricing with no hidden fees. Pay only for what you use.",
+      title: t("features.pricing.title"),
+      description: t("features.pricing.desc"),
       icon: <IconCurrencyDollar />,
     },
     {
-      title: "99.9% Uptime guarantee",
-      description: "Our robust infrastructure ensures your AI services are always available when you need them.",
+      title: t("features.uptime.title"),
+      description: t("features.uptime.desc"),
       icon: <IconCloud />,
     },
     {
-      title: "Multi-tenant Architecture",
-      description: "Securely share AI resources across your organization with role-based access control.",
+      title: t("features.multi.title"),
+      description: t("features.multi.desc"),
       icon: <IconRouteAltLeft />,
     },
     {
-      title: "24/7 AI Support",
-      description: "Get help anytime with our AI-powered support system and dedicated human experts.",
+      title: t("features.support.title"),
+      description: t("features.support.desc"),
       icon: <IconHelp />,
     },
     {
-      title: "Continuous improvement",
-      description: "Our AI models are constantly learning and improving to deliver better results over time.",
+      title: t("features.improvement.title"),
+      description: t("features.improvement.desc"),
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: "Custom solutions",
-      description: "We tailor our AI solutions to meet your specific business needs and challenges.",
+      title: t("features.custom.title"),
+      description: t("features.custom.desc"),
       icon: <IconHeart />,
     },
   ]

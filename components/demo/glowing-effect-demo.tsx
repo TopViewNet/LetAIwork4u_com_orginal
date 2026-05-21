@@ -5,39 +5,42 @@ import type React from "react"
 import { Box, Lock, Search, Settings, Sparkles } from "lucide-react"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/contexts/language-context"
 
 export function GlowingEffectDemo() {
+  const { t } = useLanguage()
+
   return (
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
       <GridItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
         icon={<Box className="h-4 w-4" />}
-        title="AI-Powered Automation"
-        description="Streamline your workflows with intelligent automation that learns and adapts to your business needs."
+        title={t("capabilities.automation.title")}
+        description={t("capabilities.automation.desc")}
       />
       <GridItem
         area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
         icon={<Settings className="h-4 w-4" />}
-        title="Advanced Analytics"
-        description="Gain actionable insights from your data with our powerful AI analytics tools."
+        title={t("capabilities.analytics.title")}
+        description={t("capabilities.analytics.desc")}
       />
       <GridItem
         area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
         icon={<Lock className="h-4 w-4" />}
-        title="Secure AI Integration"
-        description="Enterprise-grade security for all your AI implementations and data processing."
+        title={t("capabilities.security.title")}
+        description={t("capabilities.security.desc")}
       />
       <GridItem
         area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
         icon={<Sparkles className="h-4 w-4" />}
-        title="Custom AI Solutions"
-        description="Tailored AI solutions designed specifically for your industry and business challenges."
+        title={t("capabilities.custom.title")}
+        description={t("capabilities.custom.desc")}
       />
       <GridItem
         area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
         icon={<Search className="h-4 w-4" />}
-        title="Intelligent Search"
-        description="Find exactly what you need with our AI-powered search technology that understands context and intent."
+        title={t("capabilities.search.title")}
+        description={t("capabilities.search.desc")}
       />
     </ul>
   )

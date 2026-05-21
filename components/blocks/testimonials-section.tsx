@@ -1,7 +1,11 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/language-context"
 
 export function TestimonialsSection() {
+  const { t } = useLanguage()
   const testimonials = [
     {
       name: "Alex Johnson",
@@ -42,9 +46,9 @@ export function TestimonialsSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What Our Customers Say</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("testimonials.title")}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Don't just take our word for it - hear from some of our satisfied customers
+              {t("testimonials.subtitle")}
             </p>
           </div>
         </div>

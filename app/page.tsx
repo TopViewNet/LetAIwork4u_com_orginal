@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { AnimatedTextCycleDemo } from "@/components/demo/animated-text-cycle-demo"
 import { HeroDemo } from "@/components/blocks/hero-demo"
@@ -6,9 +8,11 @@ import { GlowingEffectSection } from "@/components/blocks/glowing-effect-section
 import { TestimonialsSection } from "@/components/blocks/testimonials-section"
 import { SplineSceneDemo } from "@/components/blocks/spline-scene-demo"
 import { platforms } from "@/lib/platforms"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Home() {
   const flagshipPlatforms = platforms.filter((platform) => platform.status === "flagship")
+  const { t } = useLanguage()
 
   return (
     <main className="min-h-screen flex flex-col">
@@ -17,14 +21,9 @@ export default function Home() {
       <section className="bg-slate-950 px-4 py-16 text-white md:px-6">
         <div className="container">
           <div className="mb-8 max-w-3xl">
-            <p className="mb-3 text-sm uppercase tracking-wide text-cyan-200">LetAIwork4u Oekosystem</p>
-            <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
-              Eine Dachmarke fuer KI, LegalTech, Voicebots, Robotik und neue Plattformideen.
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-300">
-              AnwaltSoft und beA4Outlook werden als Flagship-Produkte aufgebaut. Weitere Plattformen koennen sauber
-              wachsen, ohne die Marke jedes Mal neu zu erfinden.
-            </p>
+            <p className="mb-3 text-sm uppercase tracking-wide text-cyan-200">{t("home.ecosystem.eyebrow")}</p>
+            <h2 className="text-3xl font-bold tracking-tight md:text-5xl">{t("home.ecosystem.title")}</h2>
+            <p className="mt-4 text-lg leading-8 text-slate-300">{t("home.ecosystem.desc")}</p>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {flagshipPlatforms.map((platform) => (
@@ -44,7 +43,7 @@ export default function Home() {
             href="/platforms"
             className="mt-8 inline-flex rounded-md bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-200"
           >
-            Alle Plattformen ansehen
+            {t("home.ecosystem.cta")}
           </Link>
         </div>
       </section>
@@ -55,12 +54,8 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Discover our AI-powered solutions
-              </h2>
-              <p className="text-muted-foreground md:text-xl">
-                LETAIWORK4U provides everything you need to transform your business with cutting-edge AI technology.
-              </p>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("home.discover.title")}</h2>
+              <p className="text-muted-foreground md:text-xl">{t("home.discover.desc")}</p>
             </div>
             <div className="flex justify-center">
               <AnimatedTextCycleDemo />

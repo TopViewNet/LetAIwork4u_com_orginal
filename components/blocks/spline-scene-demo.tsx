@@ -5,10 +5,12 @@ import { SplineScene } from "@/components/ui/splite"
 import { Card } from "@/components/ui/card"
 import { Spotlight } from "@/components/ui/spotlight"
 import { motion } from "framer-motion"
+import { useLanguage } from "@/contexts/language-context"
 
 export function SplineSceneDemo() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     // Check if mobile
@@ -33,9 +35,9 @@ export function SplineSceneDemo() {
           transition={{ duration: 0.5 }}
         >
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">LETAIWORK4U Interactive Experience</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t("spline.title")}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Explore our AI-powered platform with immersive 3D visualizations
+              {t("spline.subtitle")}
             </p>
           </div>
         </motion.div>
@@ -57,12 +59,9 @@ export function SplineSceneDemo() {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                  AI-Powered Solutions
+                  {t("spline.cardTitle")}
                 </h1>
-                <p className="mt-4 text-neutral-300 max-w-lg">
-                  LETAIWORK4U brings your business to life with intelligent AI solutions. Create immersive experiences
-                  that transform your workflow and enhance productivity.
-                </p>
+                <p className="mt-4 text-neutral-300 max-w-lg">{t("spline.cardText")}</p>
               </motion.div>
 
               {/* Right content - 3D scene */}
