@@ -72,7 +72,7 @@ export function Header() {
             href="/contact"
             className="hidden items-center justify-center rounded-md bg-cyan-300 px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200 xl:inline-flex"
           >
-            Get Started
+            {t("nav.getStarted")}
           </Link>
           <button
             type="button"
