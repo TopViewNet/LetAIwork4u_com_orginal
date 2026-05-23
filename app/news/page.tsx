@@ -9,35 +9,26 @@ import { useLanguage } from "@/contexts/language-context"
 const featuredPosts = [
   {
     id: "letaiwork4u-platform-roadmap",
-    type: "Projektupdate",
+    typeKey: "news.type.projectUpdate",
     author: "LetAIwork4u Lab",
-    title: "Aus der Webseite wird eine AI-Plattform",
-    excerpt:
-      "Wir verbinden Website, Voicebot, LegalTech-Produkte und KI-News zu einem gemeinsamen LetAIwork4u Oekosystem.",
-    date: "Mai 2026",
-    tags: ["Platform", "Voicebot", "LegalTech"],
+    dateKey: "news.date.may2026",
+    tags: ["news.tag.platform", "news.tag.voicebot", "news.tag.legaltech"],
     stats: { likes: 42, comments: 8, reposts: 5 },
   },
   {
     id: "anwaltsoft-bea-dms",
-    type: "Produkt",
+    typeKey: "news.type.product",
     author: "AnwaltSoft",
-    title: "CRM, DMS und beA-Workflows fuer Kanzleien",
-    excerpt:
-      "AnwaltSoft wird als LegalTech-Produkt unter LetAIwork4u positioniert, mit beA4Outlook und DMS als klare Module.",
-    date: "Mai 2026",
-    tags: ["AnwaltSoft", "DMS", "beA"],
+    dateKey: "news.date.may2026",
+    tags: ["news.tag.anwaltsoft", "news.tag.dms", "news.tag.bea"],
     stats: { likes: 31, comments: 4, reposts: 3 },
   },
   {
     id: "local-ai-gemma-lab",
-    type: "AI Lab",
+    typeKey: "news.type.aiLab",
     author: "AI Radar",
-    title: "Lokale KI testen: kleine Modelle, echte Workflows",
-    excerpt:
-      "Tests mit lokalen Modellen wie Gemma zeigen, wo Datenschutz, Kostenkontrolle und Geschwindigkeit zusammenkommen.",
-    date: "Mai 2026",
-    tags: ["Local AI", "Gemma", "Automation"],
+    dateKey: "news.date.may2026",
+    tags: ["news.tag.localAI", "news.tag.gemma", "news.tag.automation"],
     stats: { likes: 55, comments: 12, reposts: 9 },
   },
 ]
@@ -121,20 +112,22 @@ export default function NewsPage() {
             <article key={post.id} className="rounded-lg border border-white/10 bg-white/5 p-5">
               <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-slate-400">
                 <Badge variant="outline" className="border-cyan-300/30 text-cyan-200">
-                  {post.type}
+                  {t(post.typeKey)}
                 </Badge>
                 <span>{post.author}</span>
                 <span className="flex items-center gap-1">
                   <CalendarDays className="h-4 w-4" />
-                  {post.date}
+                  {t(post.dateKey)}
                 </span>
               </div>
-              <h2 className="text-2xl font-bold">{t(`news.post.${post.id}.title`)}</h2>
+              <Link href={`/news/${post.id}`} className="block hover:text-cyan-200">
+                <h2 className="text-2xl font-bold">{t(`news.post.${post.id}.title`)}</h2>
+              </Link>
               <p className="mt-3 leading-7 text-slate-300">{t(`news.post.${post.id}.excerpt`)}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span key={tag} className="rounded-md bg-slate-900 px-2 py-1 text-xs text-slate-300">
-                    #{tag}
+                    #{t(tag)}
                   </span>
                 ))}
               </div>
