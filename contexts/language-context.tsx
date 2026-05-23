@@ -3809,6 +3809,133 @@ for (const language of languageOptions.map((option) => option.code)) {
   }
 }
 
+const solutionsPageTranslations: Partial<Record<Language, Record<string, string>>> = {
+  de: {
+    "common.learnMore": "Mehr erfahren",
+    "solutions.title": "Unsere Loesungen",
+    "solutions.subtitle": "KI, Software, Cloud, Daten, Sicherheit und Beratung als ausbaufaehige Bausteine fuer moderne Unternehmen.",
+    "solutions.core.title": "IT-Basisdienste",
+    "solutions.core.desc": "Stabile Infrastruktur, Support und technische Grundlagen fuer digitale Prozesse.",
+    "solutions.ai.title": "KI-Loesungen",
+    "solutions.ai.desc": "Automatisierung, Assistenten und KI-Workflows fuer konkrete betriebliche Aufgaben.",
+    "solutions.data.title": "Datenloesungen",
+    "solutions.data.desc": "Datenmanagement, Auswertung und Dashboards fuer bessere Entscheidungen.",
+    "solutions.cloud.title": "Cloud-Dienste",
+    "solutions.cloud.desc": "Skalierbare Cloud-Strukturen, Migration und sichere Bereitstellung.",
+    "solutions.industry.title": "Branchenspezifische KI",
+    "solutions.industry.desc": "KI-Loesungen passend zu Kanzlei, Handwerk, Immobilien, Aviation und weiteren Branchen.",
+    "solutions.security.title": "Cybersicherheit",
+    "solutions.security.desc": "Schutz, Zugriff, Monitoring und sichere digitale Arbeitsumgebungen.",
+    "solutions.software.title": "Individuelle Software",
+    "solutions.software.desc": "Software fuer Workflows, Plattformen, Demos und neue Produktideen.",
+    "solutions.training.title": "Schulung & Beratung",
+    "solutions.training.desc": "Beratung, Schulung und Umsetzungsbegleitung fuer Teams und Entscheider.",
+    "solutions.managed.title": "Betriebsservices",
+    "solutions.managed.desc": "Laufende Betreuung, Betrieb und Weiterentwicklung digitaler Systeme.",
+    "solutions.emerging.title": "Zukunftstechnologien",
+    "solutions.emerging.desc": "Robotik, lokale KI, eVTOL, neue Apps und Zukunftstechnologien strukturiert testen.",
+  },
+  en: {
+    "common.learnMore": "Learn more",
+    "solutions.title": "Our Solutions",
+    "solutions.subtitle": "AI, software, cloud, data, security, and consulting as expandable building blocks for modern businesses.",
+    "solutions.core.title": "Core IT Services",
+    "solutions.core.desc": "Stable infrastructure, support, and technical foundations for digital processes.",
+    "solutions.ai.title": "AI Solutions",
+    "solutions.ai.desc": "Automation, assistants, and AI workflows for concrete operational tasks.",
+    "solutions.data.title": "Data Solutions",
+    "solutions.data.desc": "Data management, analysis, and dashboards for better decisions.",
+    "solutions.cloud.title": "Cloud Services",
+    "solutions.cloud.desc": "Scalable cloud structures, migration, and secure deployment.",
+    "solutions.industry.title": "Industry-Specific AI",
+    "solutions.industry.desc": "AI solutions for law firms, trades, real estate, aviation, and additional industries.",
+    "solutions.security.title": "Cybersecurity",
+    "solutions.security.desc": "Protection, access, monitoring, and secure digital work environments.",
+    "solutions.software.title": "Custom Software",
+    "solutions.software.desc": "Individual software for workflows, platforms, demos, and product ideas.",
+    "solutions.training.title": "Training & Consulting",
+    "solutions.training.desc": "Consulting, training, and implementation guidance for teams and decision makers.",
+    "solutions.managed.title": "Managed Services",
+    "solutions.managed.desc": "Ongoing support, operation, and development of digital systems.",
+    "solutions.emerging.title": "Emerging Technologies",
+    "solutions.emerging.desc": "Structured testing for robotics, local AI, eVTOL, new apps, and future technologies.",
+  },
+  es: {
+    "common.learnMore": "Mas informacion",
+    "solutions.title": "Nuestras soluciones",
+    "solutions.subtitle": "IA, software, cloud, datos, seguridad y consultoria como modulos escalables.",
+    "solutions.core.title": "Servicios IT basicos",
+    "solutions.cloud.title": "Servicios cloud",
+    "solutions.industry.title": "IA por sector",
+    "solutions.security.title": "Ciberseguridad",
+    "solutions.software.title": "Software a medida",
+    "solutions.training.title": "Formacion y consultoria",
+    "solutions.managed.title": "Servicios gestionados",
+    "solutions.emerging.title": "Tecnologias emergentes",
+  },
+  it: {
+    "common.learnMore": "Scopri di piu",
+    "solutions.title": "Le nostre soluzioni",
+    "solutions.subtitle": "AI, software, cloud, dati, sicurezza e consulenza come moduli espandibili.",
+    "solutions.core.title": "Servizi IT principali",
+    "solutions.cloud.title": "Servizi cloud",
+    "solutions.industry.title": "AI per settore",
+    "solutions.security.title": "Cybersecurity",
+    "solutions.software.title": "Software su misura",
+    "solutions.training.title": "Formazione e consulenza",
+    "solutions.managed.title": "Servizi gestiti",
+    "solutions.emerging.title": "Tecnologie emergenti",
+  },
+  fr: {
+    "common.learnMore": "En savoir plus",
+    "solutions.title": "Nos solutions",
+    "solutions.subtitle": "IA, logiciel, cloud, donnees, securite et conseil comme modules extensibles.",
+    "solutions.core.title": "Services IT essentiels",
+    "solutions.cloud.title": "Services cloud",
+    "solutions.industry.title": "IA par secteur",
+    "solutions.security.title": "Cybersecurite",
+    "solutions.software.title": "Logiciel sur mesure",
+    "solutions.training.title": "Formation et conseil",
+    "solutions.managed.title": "Services geres",
+    "solutions.emerging.title": "Technologies emergentes",
+  },
+  nl: {
+    "common.learnMore": "Meer informatie",
+    "solutions.cloud.title": "Clouddiensten",
+    "solutions.industry.title": "Branchespecifieke AI",
+  },
+  pt: {
+    "common.learnMore": "Saiba mais",
+    "solutions.cloud.title": "Servicos cloud",
+    "solutions.industry.title": "IA por setor",
+  },
+  "de-CH": {
+    "common.learnMore": "Mehr erfahre",
+    "solutions.core.title": "IT-Basisdienscht",
+    "solutions.cloud.title": "Cloud-Dienscht",
+    "solutions.security.title": "Cybersicherheit",
+    "solutions.software.title": "Individuelli Software",
+    "solutions.training.title": "Schuelig & Beratig",
+    "solutions.managed.title": "Betriebsservices",
+    "solutions.emerging.title": "Zuekunftstechnologie",
+  },
+  sv: {
+    "common.learnMore": "Las mer",
+    "solutions.cloud.title": "Molntjanster",
+    "solutions.industry.title": "Branschspecifik AI",
+  },
+}
+
+for (const language of languageOptions.map((option) => option.code)) {
+  if (language !== "de" && language !== "en") {
+    solutionsPageTranslations[language] = {
+      ...(solutionsPageTranslations.en ?? {}),
+      ...(feedAndSolutionsTranslations[language] ?? {}),
+      ...(solutionsPageTranslations[language] ?? {}),
+    }
+  }
+}
+
 function explicitTranslations(language: Language) {
   const entries = Object.entries(translations[language] ?? {})
   if (language === "de") {
@@ -3840,6 +3967,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     ...(pricingPageTranslations[language] ?? {}),
     ...(feedAndSolutionsTranslations.en ?? {}),
     ...(feedAndSolutionsTranslations[language] ?? {}),
+    ...(solutionsPageTranslations.en ?? {}),
+    ...(solutionsPageTranslations[language] ?? {}),
   }
 
   useEffect(() => {
