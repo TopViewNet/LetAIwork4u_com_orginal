@@ -11,6 +11,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Phone, Mail, Clock, CheckCircle } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
+const contactProducts = [
+  { value: "Enterprise AI Chatbot", labelKey: "products.enterpriseAIChatbot.title" },
+  { value: "Intelligent Voice Assistant", labelKey: "products.intelligentVoiceAssistant.title" },
+  { value: "Business Process Automation", labelKey: "products.businessProcessAutomation.title" },
+  { value: "Predictive Analytics Platform", labelKey: "products.predictiveAnalyticsPlatform.title" },
+  { value: "Custom AI Development", labelKey: "products.customAIDevelopment.title" },
+  { value: "AI Implementation Services", labelKey: "products.aiImplementationServices.title" },
+  { value: "Other", labelKey: "contact.productOther" },
+]
+
 export default function ContactPage() {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
@@ -25,9 +35,9 @@ export default function ContactPage() {
     product: productParam || "",
     plan: planParam || "",
     message: productParam
-      ? `I'm interested in learning more about ${productParam}`
+      ? `${t("contact.prefillProduct")} ${productParam}`
       : planParam
-        ? `I'm interested in the ${planParam} plan`
+        ? `${t("contact.prefillPlan")} ${planParam}`
         : "",
   })
 
@@ -75,7 +85,7 @@ export default function ContactPage() {
         })
       }, 5000)
     } catch {
-      setSubmitError("Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie direkt an contact@letaiwork4u.com.")
+      setSubmitError(t("contact.submitError"))
     } finally {
       setIsSubmitting(false)
     }
@@ -208,13 +218,11 @@ export default function ContactPage() {
                       <SelectValue placeholder={t("contact.productInterest")} />
                     </SelectTrigger>
                     <SelectContent className="bg-gray-800 border-gray-700 text-white">
-                      <SelectItem value="Enterprise AI Chatbot">Enterprise AI Chatbot</SelectItem>
-                      <SelectItem value="Intelligent Voice Assistant">Intelligent Voice Assistant</SelectItem>
-                      <SelectItem value="Business Process Automation">Business Process Automation</SelectItem>
-                      <SelectItem value="Predictive Analytics Platform">Predictive Analytics Platform</SelectItem>
-                      <SelectItem value="Custom AI Development">Custom AI Development</SelectItem>
-                      <SelectItem value="AI Implementation Services">AI Implementation Services</SelectItem>
-                      <SelectItem value="Other">Other</SelectItem>
+                      {contactProducts.map((product) => (
+                        <SelectItem key={product.value} value={product.value}>
+                          {t(product.labelKey)}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -237,7 +245,7 @@ export default function ContactPage() {
                 {submitError && <p className="text-sm text-red-400">{submitError}</p>}
 
                 <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white" disabled={isSubmitting}>
-                  {isSubmitting ? "Wird gesendet..." : t("contact.submit")}
+                  {isSubmitting ? t("contact.submitting") : t("contact.submit")}
                 </Button>
               </form>
             )}
