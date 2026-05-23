@@ -23,7 +23,12 @@ export default function ProductsPage() {
       descriptionKey: "products.enterpriseAIChatbot.description",
       image: "/products/chatbot.png",
       href: "/products/enterprise-ai-chatbot",
-      features: ["24/7 Customer Support", "Multi-language Support", "CRM Integration", "Analytics Dashboard"],
+      features: [
+        "products.feature.customerSupport",
+        "products.feature.multilanguage",
+        "products.feature.crm",
+        "products.feature.analyticsDashboard",
+      ],
     },
     {
       titleKey: "products.intelligentVoiceAssistant.title",
@@ -31,7 +36,12 @@ export default function ProductsPage() {
       descriptionKey: "products.intelligentVoiceAssistant.description",
       image: "/products/voice-assistant.png",
       href: "/products/intelligent-voice-assistant",
-      features: ["Natural Language Processing", "Voice Recognition", "Multi-platform Support", "Custom Voice Options"],
+      features: [
+        "products.feature.nlp",
+        "products.feature.voiceRecognition",
+        "products.feature.multiplatform",
+        "products.feature.customVoice",
+      ],
     },
     {
       titleKey: "products.businessProcessAutomation.title",
@@ -39,7 +49,12 @@ export default function ProductsPage() {
       descriptionKey: "products.businessProcessAutomation.description",
       image: "/products/automation.png",
       href: "/products/business-process-automation",
-      features: ["Workflow Automation", "Document Processing", "Task Scheduling", "Performance Analytics"],
+      features: [
+        "products.feature.workflow",
+        "products.feature.documents",
+        "products.feature.scheduling",
+        "products.feature.performance",
+      ],
     },
     {
       titleKey: "products.predictiveAnalyticsPlatform.title",
@@ -47,7 +62,12 @@ export default function ProductsPage() {
       descriptionKey: "products.predictiveAnalyticsPlatform.description",
       image: "/products/analytics.png",
       href: "/products/predictive-analytics-platform",
-      features: ["Trend Forecasting", "Data Visualization", "Real-time Analytics", "Custom Reporting"],
+      features: [
+        "products.feature.forecasting",
+        "products.feature.visualization",
+        "products.feature.realtime",
+        "products.feature.reporting",
+      ],
     },
     {
       titleKey: "products.customAIDevelopment.title",
@@ -55,7 +75,12 @@ export default function ProductsPage() {
       descriptionKey: "products.customAIDevelopment.description",
       image: "/products/custom-ai.png",
       href: "/products/custom-ai-development",
-      features: ["Tailored AI Models", "Custom Algorithms", "Industry-specific Solutions", "Ongoing Support"],
+      features: [
+        "products.feature.aiModels",
+        "products.feature.algorithms",
+        "products.feature.industry",
+        "products.feature.ongoingSupport",
+      ],
     },
     {
       titleKey: "products.aiImplementationServices.title",
@@ -63,7 +88,12 @@ export default function ProductsPage() {
       descriptionKey: "products.aiImplementationServices.description",
       image: "/products/consulting.png",
       href: "/products/ai-implementation-services",
-      features: ["AI Strategy Development", "Implementation Planning", "Staff Training", "Performance Optimization"],
+      features: [
+        "products.feature.strategy",
+        "products.feature.implementation",
+        "products.feature.training",
+        "products.feature.optimization",
+      ],
     },
   ]
 
@@ -150,7 +180,7 @@ export default function ProductsPage() {
                     {product.features.slice(0, 4).map((feature, idx) => (
                       <li key={idx} className="text-xs text-gray-600 flex items-start">
                         <span className="mr-1 text-blue-600">•</span>
-                        <span className="line-clamp-1">{feature}</span>
+                        <span className="line-clamp-1">{t(feature)}</span>
                       </li>
                     ))}
                   </ul>

@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Bot, CalendarDays, Heart, MessageCircle, Repeat2, Rocket, Share2, Sparkles } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 const featuredPosts = [
   {
@@ -39,31 +42,19 @@ const featuredPosts = [
   },
 ]
 
-const channels = [
-  "Alle",
-  "KI News",
-  "Projekte",
-  "Voicebots",
-  "LegalTech",
-  "Robotics",
-  "Open Source",
-  "Praxiswissen",
-]
+const channels = ["all", "ai", "projects", "voicebots", "legaltech", "robotics", "openSource", "practice"]
 
 export default function NewsPage() {
+  const { t } = useLanguage()
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <section className="border-b border-white/10 px-4 pb-10 pt-32 md:px-6">
         <div className="container grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
-            <Badge className="mb-5 bg-cyan-300 text-slate-950 hover:bg-cyan-300">KI Feed</Badge>
-            <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">
-              News, Projekte und Gedanken aus der Welt der KI.
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-              Der neue Social-Bereich fuer LetAIwork4u: Updates, Produktfortschritt, AI-Trends, Experimente und
-              spaeter Community-Beitraege mit Profilen, Kommentaren und Likes.
-            </p>
+            <Badge className="mb-5 bg-cyan-300 text-slate-950 hover:bg-cyan-300">{t("news.badge")}</Badge>
+            <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">{t("news.title")}</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">{t("news.subtitle")}</p>
           </div>
           <div className="rounded-lg border border-white/10 bg-white/5 p-5">
             <div className="flex items-center gap-3">
@@ -71,22 +62,22 @@ export default function NewsPage() {
                 <Sparkles className="h-5 w-5" />
               </span>
               <div>
-                <p className="font-semibold">Plattform-MVP</p>
-                <p className="text-sm text-slate-400">Admin-Posts jetzt, Nutzerfunktionen als naechster Schritt.</p>
+                <p className="font-semibold">{t("news.mvp.title")}</p>
+                <p className="text-sm text-slate-400">{t("news.mvp.desc")}</p>
               </div>
             </div>
             <div className="mt-5 grid grid-cols-3 gap-3 text-center">
               <div className="rounded-md bg-slate-900 p-3">
                 <p className="text-2xl font-bold">3</p>
-                <p className="text-xs text-slate-400">Feeds</p>
+                <p className="text-xs text-slate-400">{t("news.stats.feeds")}</p>
               </div>
               <div className="rounded-md bg-slate-900 p-3">
                 <p className="text-2xl font-bold">8</p>
-                <p className="text-xs text-slate-400">Kanaele</p>
+                <p className="text-xs text-slate-400">{t("news.stats.channels")}</p>
               </div>
               <div className="rounded-md bg-slate-900 p-3">
                 <p className="text-2xl font-bold">1</p>
-                <p className="text-xs text-slate-400">Oekosystem</p>
+                <p className="text-xs text-slate-400">{t("news.stats.ecosystem")}</p>
               </div>
             </div>
           </div>
@@ -96,14 +87,14 @@ export default function NewsPage() {
       <main className="container grid gap-8 px-4 py-10 md:px-6 lg:grid-cols-[220px_1fr_280px]">
         <aside className="hidden lg:block">
           <div className="sticky top-24 rounded-lg border border-white/10 bg-white/5 p-4">
-            <h2 className="mb-3 text-sm font-semibold uppercase text-slate-400">Kanaele</h2>
+            <h2 className="mb-3 text-sm font-semibold uppercase text-slate-400">{t("news.channels")}</h2>
             <nav className="grid gap-1">
               {channels.map((channel) => (
                 <button
                   key={channel}
                   className="rounded-md px-3 py-2 text-left text-sm text-slate-300 hover:bg-white/10 hover:text-white"
                 >
-                  {channel}
+                  {t(`news.channel.${channel}`)}
                 </button>
               ))}
             </nav>
@@ -117,11 +108,11 @@ export default function NewsPage() {
                 <Bot className="h-5 w-5 text-cyan-300" />
               </span>
               <div className="flex-1">
-                <p className="text-sm text-slate-400">Was gibt es Neues?</p>
-                <p className="text-slate-200">Admin-Composer: News, Projektupdate oder KI-Fundstueck vorbereiten</p>
+                <p className="text-sm text-slate-400">{t("news.composer.question")}</p>
+                <p className="text-slate-200">{t("news.composer.desc")}</p>
               </div>
               <Button asChild className="bg-cyan-300 text-slate-950 hover:bg-cyan-200">
-                <Link href="/contact?product=KI%20Feed">Beitrag vorschlagen</Link>
+                <Link href="/contact?product=KI%20Feed">{t("news.composer.cta")}</Link>
               </Button>
             </div>
           </div>
@@ -138,8 +129,8 @@ export default function NewsPage() {
                   {post.date}
                 </span>
               </div>
-              <h2 className="text-2xl font-bold">{post.title}</h2>
-              <p className="mt-3 leading-7 text-slate-300">{post.excerpt}</p>
+              <h2 className="text-2xl font-bold">{t(`news.post.${post.id}.title`)}</h2>
+              <p className="mt-3 leading-7 text-slate-300">{t(`news.post.${post.id}.excerpt`)}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span key={tag} className="rounded-md bg-slate-900 px-2 py-1 text-xs text-slate-300">
@@ -164,7 +155,7 @@ export default function NewsPage() {
                 </div>
                 <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white">
                   <Share2 className="mr-2 h-4 w-4" />
-                  Teilen
+                  {t("news.share")}
                 </Button>
               </div>
             </article>
@@ -175,21 +166,18 @@ export default function NewsPage() {
           <div className="rounded-lg border border-white/10 bg-white/5 p-5">
             <h2 className="flex items-center gap-2 font-semibold">
               <Rocket className="h-5 w-5 text-cyan-300" />
-              Naechste Ausbaustufe
+              {t("news.next.title")}
             </h2>
             <ul className="mt-4 grid gap-3 text-sm text-slate-300">
-              <li>Nutzer-Accounts und Profile</li>
-              <li>Kommentare, Likes und gespeicherte Posts</li>
-              <li>Admin-Dashboard fuer News und Projekte</li>
-              <li>Datenbank fuer Feed, Kontakte und Leads</li>
+              <li>{t("news.next.1")}</li>
+              <li>{t("news.next.2")}</li>
+              <li>{t("news.next.3")}</li>
+              <li>{t("news.next.4")}</li>
             </ul>
           </div>
           <div className="rounded-lg border border-white/10 bg-white/5 p-5">
-            <h2 className="font-semibold">Brand-Klammer</h2>
-            <p className="mt-3 text-sm leading-6 text-slate-300">
-              LetAIwork4u bleibt die Muttermarke. AnwaltSoft, beA4Outlook und DMS werden als Produktlinien sichtbar
-              eingebettet.
-            </p>
+            <h2 className="font-semibold">{t("news.brand.title")}</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">{t("news.brand.desc")}</p>
           </div>
         </aside>
       </main>

@@ -1,23 +1,23 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowRight, Layers3, Sparkles } from "lucide-react"
 import { platforms } from "@/lib/platforms"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function PlatformsPage() {
+  const { t } = useLanguage()
+
   return (
     <main className="min-h-screen bg-slate-950 text-white">
       <section className="container px-4 pb-12 pt-32 md:px-6">
         <Badge className="mb-5 bg-cyan-300 text-slate-950 hover:bg-cyan-300">
           <Layers3 className="mr-2 h-4 w-4" />
-          Plattform-System
+          {t("platforms.badge")}
         </Badge>
-        <h1 className="max-w-5xl text-4xl font-bold tracking-tight md:text-6xl">
-          Eine Dachmarke, viele Plattformen, klare Struktur fuer alles, was noch kommt.
-        </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-          LetAIwork4u wird als Innovation Hub aufgebaut. Jede neue Idee bekommt eine eigene Plattformlogik, eigene
-          Zielgruppe, eigene GEO-Themen und eine klare Verbindung zur Muttermarke.
-        </p>
+        <h1 className="max-w-5xl text-4xl font-bold tracking-tight md:text-6xl">{t("platforms.title")}</h1>
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{t("platforms.subtitle")}</p>
       </section>
 
       <section className="container grid gap-5 px-4 pb-16 md:grid-cols-2 md:px-6 xl:grid-cols-3">
@@ -32,14 +32,18 @@ export default function PlatformsPage() {
             <div className={`mb-5 h-2 rounded-full bg-gradient-to-r ${platform.accent}`} />
             <div className="mb-4 flex items-center justify-between gap-3">
               <div>
-                <p className="text-sm uppercase tracking-wide text-cyan-200">{platform.eyebrow}</p>
-                <h2 className="mt-1 text-2xl font-bold">{platform.name}</h2>
+                <p className="text-sm uppercase tracking-wide text-cyan-200">
+                  {t(`platform.${platform.slug}.eyebrow`)}
+                </p>
+                <h2 className="mt-1 text-2xl font-bold">{t(`platform.${platform.slug}.name`)}</h2>
               </div>
-              <span className="rounded-md bg-slate-900 px-2 py-1 text-xs text-slate-300">{platform.status}</span>
+              <span className="rounded-md bg-slate-900 px-2 py-1 text-xs text-slate-300">
+                {t(`platform.status.${platform.status}`)}
+              </span>
             </div>
-            <p className="min-h-24 text-sm leading-6 text-slate-300">{platform.summary}</p>
+            <p className="min-h-24 text-sm leading-6 text-slate-300">{t(`platform.${platform.slug}.summary`)}</p>
             <p className="mt-4 rounded-md bg-slate-900/80 p-3 text-xs leading-5 text-slate-400">
-              {platform.visualDirection}
+              {t(`platform.${platform.slug}.visualDirection`)}
             </p>
             <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-sm">
               <span className="flex items-center gap-2 text-slate-400">

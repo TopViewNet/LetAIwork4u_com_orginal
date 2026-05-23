@@ -1,57 +1,61 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function SolutionsPage() {
+  const { t } = useLanguage()
   const solutions = [
     {
-      title: "Core IT Services",
-      description: "Comprehensive IT infrastructure and support services to keep your business running smoothly.",
+      titleKey: "solutions.core.title",
+      descriptionKey: "solutions.core.desc",
       href: "/solutions/core-it-services",
     },
     {
-      title: "AI Solutions",
-      description: "Cutting-edge artificial intelligence solutions to automate processes and gain insights.",
+      titleKey: "solutions.ai.title",
+      descriptionKey: "solutions.ai.desc",
       href: "/solutions/ai-solutions",
     },
     {
-      title: "Data Solutions",
-      description: "Data management, analytics, and visualization services to unlock the value of your data.",
+      titleKey: "solutions.data.title",
+      descriptionKey: "solutions.data.desc",
       href: "/solutions/data-solutions",
     },
     {
-      title: "Cloud Services",
-      description: "Secure, scalable cloud infrastructure and migration services for modern businesses.",
+      titleKey: "solutions.cloud.title",
+      descriptionKey: "solutions.cloud.desc",
       href: "/solutions/cloud-services",
     },
     {
-      title: "Industry-Specific AI",
-      description: "Tailored AI solutions designed for the unique challenges of your industry.",
+      titleKey: "solutions.industry.title",
+      descriptionKey: "solutions.industry.desc",
       href: "/solutions/industry-specific-ai",
     },
     {
-      title: "Cybersecurity",
-      description: "Protect your business with comprehensive security solutions and threat management.",
+      titleKey: "solutions.security.title",
+      descriptionKey: "solutions.security.desc",
       href: "/solutions/cybersecurity",
     },
     {
-      title: "Custom Software",
-      description: "Bespoke software development to address your specific business requirements.",
+      titleKey: "solutions.software.title",
+      descriptionKey: "solutions.software.desc",
       href: "/solutions/custom-software",
     },
     {
-      title: "Training & Consulting",
-      description: "Expert guidance and training to help your team leverage technology effectively.",
+      titleKey: "solutions.training.title",
+      descriptionKey: "solutions.training.desc",
       href: "/solutions/training-consulting",
     },
     {
-      title: "Managed Services",
-      description: "End-to-end management of your IT infrastructure and services.",
+      titleKey: "solutions.managed.title",
+      descriptionKey: "solutions.managed.desc",
       href: "/solutions/managed-services",
     },
     {
-      title: "Emerging Technologies",
-      description: "Stay ahead with the latest technological innovations and digital transformation.",
+      titleKey: "solutions.emerging.title",
+      descriptionKey: "solutions.emerging.desc",
       href: "/solutions/emerging-technologies",
     },
   ]
@@ -59,23 +63,21 @@ export default function SolutionsPage() {
   return (
     <div className="space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Our Solutions</h1>
-        <p className="text-xl text-muted-foreground">
-          Comprehensive AI and IT solutions to transform your business and drive innovation
-        </p>
+        <h1 className="text-4xl font-bold tracking-tight">{t("solutions.title")}</h1>
+        <p className="text-xl text-muted-foreground">{t("solutions.subtitle")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {solutions.map((solution) => (
           <div
-            key={solution.title}
+            key={solution.titleKey}
             className="group relative overflow-hidden rounded-lg border p-6 hover:border-primary transition-colors"
           >
-            <h3 className="text-xl font-semibold">{solution.title}</h3>
-            <p className="mt-2 text-muted-foreground">{solution.description}</p>
+            <h3 className="text-xl font-semibold">{t(solution.titleKey)}</h3>
+            <p className="mt-2 text-muted-foreground">{t(solution.descriptionKey)}</p>
             <Button variant="link" className="mt-4 p-0 h-auto" asChild>
               <Link href={solution.href} className="group-hover:text-primary flex items-center gap-1">
-                Learn more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                {t("common.learnMore")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
