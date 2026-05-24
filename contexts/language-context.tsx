@@ -5228,6 +5228,16 @@ const platformBaseKeys: Record<string, string> = {
   "platform.anwaltsoft.audience": "Law firms, partners, lawyers, back office, and legal operations teams.",
   "platform.anwaltsoft.promise": "More structure, better digital files, fewer system breaks.",
   "platform.anwaltsoft.visualDirection": "Premium LegalTech with law-office atmosphere, precision, document flow, and secure dashboards.",
+  "platform.anwaltsoft.premium.eyebrow": "Premium Strategy",
+  "platform.anwaltsoft.premium.title": "A platform for law firms that want fewer system breaks and stronger digital control.",
+  "platform.anwaltsoft.premium.desc":
+    "AnwaltSoft should not feel like another small tool. The platform is positioned as a serious operating layer for modern law firms: CRM, DMS, deadlines, beA-related workflows, permissions, and management views in one coherent environment.",
+  "platform.anwaltsoft.premium.point.1.title": "Law-firm cockpit",
+  "platform.anwaltsoft.premium.point.1.desc": "Partners and teams see matters, deadlines, communication, documents, and priorities without jumping between disconnected systems.",
+  "platform.anwaltsoft.premium.point.2.title": "DMS and document flow",
+  "platform.anwaltsoft.premium.point.2.desc": "Digital files, structured documents, hash references, and beA-adjacent processes are prepared for a professional office workflow.",
+  "platform.anwaltsoft.premium.point.3.title": "Expandable LegalTech architecture",
+  "platform.anwaltsoft.premium.point.3.desc": "beA4Outlook, beA2Outlook, DMS modules, AI assistance, and future client portals can grow under one premium platform logic.",
   "platform.bea4outlook.eyebrow": "Standalone Product",
   "platform.bea4outlook.name": "beA4Outlook",
   "platform.bea4outlook.summary": "beA messages and Outlook emails in one familiar workspace, with hash files and certificate login.",
@@ -5342,6 +5352,16 @@ const platformLocalizedOverrides: Partial<Record<Language, Record<string, string
     "platform.detail.nextStepDesc": "Diese Plattform kann mit eigenen Detailseiten, Demos, Bildern, Formularen und Produkt-Workflows weiter ausgebaut werden.",
     "platform.anwaltsoft.summary":
       "AnwaltSoft ist das Hauptprodukt im LetAIwork4u Oekosystem und wird als hochwertige Kanzlei-Plattform positioniert.",
+    "platform.anwaltsoft.premium.eyebrow": "Premium-Strategie",
+    "platform.anwaltsoft.premium.title": "Eine Plattform fuer Kanzleien, die weniger Systembrueche und mehr digitale Kontrolle wollen.",
+    "platform.anwaltsoft.premium.desc":
+      "AnwaltSoft soll nicht wie ein weiteres kleines Tool wirken. Die Plattform wird als serioese Steuerungsebene fuer moderne Kanzleien positioniert: CRM, DMS, Fristen, beA-nahe Workflows, Rechte und Managementansichten in einer klaren Umgebung.",
+    "platform.anwaltsoft.premium.point.1.title": "Kanzlei-Cockpit",
+    "platform.anwaltsoft.premium.point.1.desc": "Partner und Teams sehen Mandate, Fristen, Kommunikation, Dokumente und Prioritaeten, ohne zwischen getrennten Systemen zu springen.",
+    "platform.anwaltsoft.premium.point.2.title": "DMS und Dokumentenfluss",
+    "platform.anwaltsoft.premium.point.2.desc": "Digitale Akten, strukturierte Dokumente, Hash-Bezuege und beA-nahe Prozesse werden fuer professionelle Kanzleiablaeufe vorbereitet.",
+    "platform.anwaltsoft.premium.point.3.title": "Ausbaufaehige LegalTech-Architektur",
+    "platform.anwaltsoft.premium.point.3.desc": "beA4Outlook, beA2Outlook, DMS-Module, KI-Unterstuetzung und spaetere Mandantenportale koennen unter einer Premium-Plattformlogik wachsen.",
     "platform.bea4outlook.summary": "beA Nachrichten und Outlook E-Mails in einer vertrauten Umgebung, mit Hashdateien und Zertifikat-Login.",
   },
   es: {

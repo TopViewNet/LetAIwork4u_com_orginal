@@ -6,6 +6,10 @@ import type { Platform } from "@/lib/platforms"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 
+const platformHeroImages: Record<string, string> = {
+  anwaltsoft: "/platforms/anwaltsoft-hero.jpg",
+}
+
 export function PlatformDetailClient({ platform }: { platform: Platform }) {
   const { t } = useLanguage()
   const tr = (key: string, fallback: string) => {
@@ -14,34 +18,48 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
   }
 
   const base = `platform.${platform.slug}`
+  const heroImage = platformHeroImages[platform.slug]
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <section className="container px-4 pb-12 pt-32 md:px-6">
-        <Button asChild variant="ghost" className="mb-8 text-slate-300 hover:text-white">
-          <Link href="/platforms">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            {t("platform.detail.back")}
-          </Link>
-        </Button>
+      <section className="relative overflow-hidden">
+        {heroImage && (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-45"
+              style={{ backgroundImage: `url(${heroImage})` }}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.98)_0%,rgba(2,6,23,0.9)_38%,rgba(2,6,23,0.58)_70%,rgba(2,6,23,0.82)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-slate-950" />
+          </>
+        )}
 
-        <div className={`mb-6 h-2 max-w-xl rounded-full bg-gradient-to-r ${platform.accent}`} />
-        <p className="text-sm uppercase tracking-wide text-cyan-200">{tr(`${base}.eyebrow`, platform.eyebrow)}</p>
-        <h1 className="mt-3 max-w-5xl text-4xl font-bold tracking-tight md:text-6xl">
-          {tr(`${base}.headline`, platform.headline)}
-        </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{tr(`${base}.summary`, platform.summary)}</p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button asChild className="bg-cyan-300 text-slate-950 hover:bg-cyan-200">
-            <Link href={`/contact?product=${encodeURIComponent(tr(`${base}.name`, platform.name))}`}>
-              {t("platform.detail.discuss")}
+        <div className="container relative px-4 pb-16 pt-32 md:px-6 md:pb-24">
+          <Button asChild variant="ghost" className="mb-8 text-slate-300 hover:text-white">
+            <Link href="/platforms">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {t("platform.detail.back")}
             </Link>
           </Button>
-          {platform.domain && (
-            <Button asChild variant="outline" className="border-white/20 bg-transparent text-white hover:bg-white/10">
-              <a href={`https://${platform.domain}`}>{platform.domain}</a>
+
+          <div className={`mb-6 h-2 max-w-xl rounded-full bg-gradient-to-r ${platform.accent}`} />
+          <p className="text-sm uppercase tracking-wide text-cyan-200">{tr(`${base}.eyebrow`, platform.eyebrow)}</p>
+          <h1 className="mt-3 max-w-5xl text-4xl font-bold tracking-tight md:text-6xl">
+            {tr(`${base}.headline`, platform.headline)}
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">{tr(`${base}.summary`, platform.summary)}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button asChild className="bg-white text-slate-950 hover:bg-slate-100">
+              <Link href={`/contact?product=${encodeURIComponent(tr(`${base}.name`, platform.name))}`}>
+                {t("platform.detail.discuss")}
+              </Link>
             </Button>
-          )}
+            {platform.domain && (
+              <Button asChild variant="outline" className="border-white/25 bg-slate-950/35 text-white backdrop-blur hover:bg-white/10">
+                <a href={`https://${platform.domain}`}>{platform.domain}</a>
+              </Button>
+            )}
+          </div>
         </div>
       </section>
 
@@ -100,6 +118,26 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
           </div>
         </div>
       </section>
+
+      {platform.slug === "anwaltsoft" && (
+        <section className="container px-4 pb-20 md:px-6">
+          <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="rounded-lg border border-white/10 bg-white/[0.06] p-6">
+              <p className="text-sm uppercase tracking-wide text-cyan-200">{t("platform.anwaltsoft.premium.eyebrow")}</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight">{t("platform.anwaltsoft.premium.title")}</h2>
+              <p className="mt-4 max-w-3xl leading-7 text-slate-300">{t("platform.anwaltsoft.premium.desc")}</p>
+            </div>
+            <div className="grid gap-3">
+              {["1", "2", "3"].map((item) => (
+                <div key={item} className="rounded-lg border border-white/10 bg-slate-900/80 p-4">
+                  <h3 className="font-semibold text-white">{t(`platform.anwaltsoft.premium.point.${item}.title`)}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{t(`platform.anwaltsoft.premium.point.${item}.desc`)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {platform.slug === "voicebot" && (
         <section className="container px-4 pb-16 md:px-6">
