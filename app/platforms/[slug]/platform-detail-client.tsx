@@ -12,6 +12,7 @@ const platformHeroImages: Record<string, string> = {
 
 export function PlatformDetailClient({ platform }: { platform: Platform }) {
   const { t } = useLanguage()
+  const isAnwaltSoft = platform.slug === "anwaltsoft"
   const tr = (key: string, fallback: string) => {
     const value = t(key)
     return value === key ? fallback : value
@@ -59,7 +60,7 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
                 <a href={`https://${platform.domain}`}>{platform.domain}</a>
               </Button>
             )}
-            {platform.slug === "anwaltsoft" && (
+            {isAnwaltSoft && (
               <Button asChild variant="outline" className="border-white/25 bg-slate-950/35 text-white backdrop-blur hover:bg-white/10">
                 <a href="https://anwaltsoftdemo.vercel.app/demo">{tr("platform.anwaltsoft.demoCta", "DMS-Demo ansehen")}</a>
               </Button>
@@ -124,17 +125,17 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
         </div>
       </section>
 
-      {platform.slug === "anwaltsoft" && (
+      {isAnwaltSoft && (
         <section className="container px-4 pb-20 md:px-6">
           <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="rounded-lg border border-white/10 bg-white/[0.06] p-6">
+            <div className="rounded-lg border border-cyan-200/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),rgba(14,165,233,0.08))] p-6 shadow-2xl shadow-cyan-950/25">
               <p className="text-sm uppercase tracking-wide text-cyan-200">{t("platform.anwaltsoft.premium.eyebrow")}</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight">{t("platform.anwaltsoft.premium.title")}</h2>
               <p className="mt-4 max-w-3xl leading-7 text-slate-300">{t("platform.anwaltsoft.premium.desc")}</p>
             </div>
             <div className="grid gap-3">
               {["1", "2", "3"].map((item) => (
-                <div key={item} className="rounded-lg border border-white/10 bg-slate-900/80 p-4">
+                <div key={item} className="rounded-lg border border-cyan-200/15 bg-slate-900/80 p-4 shadow-sm shadow-cyan-950/30">
                   <h3 className="font-semibold text-white">{t(`platform.anwaltsoft.premium.point.${item}.title`)}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-300">{t(`platform.anwaltsoft.premium.point.${item}.desc`)}</p>
                 </div>
@@ -166,9 +167,21 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
         <div className="rounded-lg border border-white/10 bg-white/5 p-5">
           <h2 className="flex items-center gap-2 text-xl font-semibold">
             <Sparkles className="h-5 w-5 text-cyan-300" />
-            {t("platform.detail.nextStep")}
+            {isAnwaltSoft ? t("platform.anwaltsoft.next.title") : t("platform.detail.nextStep")}
           </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">{t("platform.detail.nextStepDesc")}</p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
+            {isAnwaltSoft ? t("platform.anwaltsoft.next.desc") : t("platform.detail.nextStepDesc")}
+          </p>
+          {isAnwaltSoft && (
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Button asChild className="bg-cyan-200 text-slate-950 hover:bg-white">
+                <a href="https://anwaltsoftdemo.vercel.app/demo">{t("platform.anwaltsoft.next.demo")}</a>
+              </Button>
+              <Button asChild variant="outline" className="border-cyan-200/30 bg-transparent text-white hover:bg-white/10">
+                <Link href="/contact?product=AnwaltSoft">{t("platform.anwaltsoft.next.contact")}</Link>
+              </Button>
+            </div>
+          )}
         </div>
       </section>
     </main>

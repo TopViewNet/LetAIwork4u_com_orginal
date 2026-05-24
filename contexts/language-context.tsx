@@ -5230,6 +5230,11 @@ const platformBaseKeys: Record<string, string> = {
   "platform.anwaltsoft.promise": "Clearer files, fewer system breaks, and a law-firm workflow that can be managed with confidence.",
   "platform.anwaltsoft.visualDirection": "Premium LegalTech with law-office atmosphere, document flow, mobile app views, and secure dashboards.",
   "platform.anwaltsoft.demoCta": "View DMS demo",
+  "platform.anwaltsoft.next.title": "Next: turn the prototype into a demonstrable LegalTech product path.",
+  "platform.anwaltsoft.next.desc":
+    "The page now points to the existing DMS demo and frames beA Sync as the future app layer: inbox, EEB actions, attachments, certificate status, sync cadence, and Outlook forwarding become one premium workflow instead of separate isolated tools.",
+  "platform.anwaltsoft.next.demo": "Open DMS demo",
+  "platform.anwaltsoft.next.contact": "Discuss AnwaltSoft",
   "platform.anwaltsoft.premium.eyebrow": "Product Strategy",
   "platform.anwaltsoft.premium.title": "From law-firm software to an operating layer for modern legal teams.",
   "platform.anwaltsoft.premium.desc":
@@ -5289,9 +5294,21 @@ const platformBaseKeys: Record<string, string> = {
 
 const platformListBase = {
   anwaltsoft: {
-    capability: ["Client CRM", "DMS demo", "Deadlines and calendar", "Role permissions", "beA modules", "Law-firm dashboards"],
+    capability: [
+      "Digital matter files with document structure",
+      "DMS demo for law-firm document workflows",
+      "Deadlines, time tracking, and office overview",
+      "beA Sync mobile app module",
+      "Outlook forwarding as an optional channel",
+      "Management dashboards for partners and back office",
+    ],
     geo: ["Law-firm software", "LegalTech", "beA integration", "Document management for law firms"],
-    roadmap: ["Embed existing DMS demo", "Expand DMS module", "Law-firm role model", "Admin and client portal"],
+    roadmap: [
+      "Connect the existing AnwaltSoft DMS demo",
+      "Turn beA Sync into a visible app module",
+      "Treat Outlook forwarding as one communication feature",
+      "Prepare roles, admin area, and future client portal",
+    ],
   },
   bea4outlook: {
     capability: [
@@ -5355,9 +5372,15 @@ const platformLocalizedOverrides: Partial<Record<Language, Record<string, string
     "platform.anwaltsoft.summary":
       "AnwaltSoft buendelt digitale Akten, DMS, Fristen, Zeiterfassung, beA-nahe Prozesse und kuenftige App-Module zu einer hochwertigen Kanzlei-Plattform.",
     "platform.anwaltsoft.headline": "Kanzleisoftware, die DMS, Akten, Fristen, Zeiten und sichere Kommunikation zusammenfuehrt.",
+    "platform.anwaltsoft.audience": "Rechtsanwaelte, Notare, Partnerkanzleien, Assistenzteams und Legal-Operations-Verantwortliche.",
     "platform.anwaltsoft.promise": "Klarere Akten, weniger Systembrueche und ein besser steuerbarer Kanzleialltag.",
     "platform.anwaltsoft.visualDirection": "Premium LegalTech mit Kanzlei-Office, Dokumentenfluss, App-Ansichten und sicheren Dashboards.",
     "platform.anwaltsoft.demoCta": "DMS-Demo ansehen",
+    "platform.anwaltsoft.next.title": "Naechster Schritt: aus dem Prototyp eine vorzeigbare LegalTech-Produktstrecke machen.",
+    "platform.anwaltsoft.next.desc":
+      "Die Seite fuehrt jetzt zur vorhandenen DMS-Demo und ordnet beA Sync als kuenftige App-Schicht ein: Inbox, EEB-Aktionen, Anlagen, Zertifikatsstatus, Sync-Intervall und Outlook-Weiterleitung werden als ein hochwertiger Workflow statt als lose Einzelfunktionen dargestellt.",
+    "platform.anwaltsoft.next.demo": "DMS-Demo oeffnen",
+    "platform.anwaltsoft.next.contact": "AnwaltSoft besprechen",
     "platform.anwaltsoft.premium.eyebrow": "Produktstrategie",
     "platform.anwaltsoft.premium.title": "Aus Kanzleisoftware wird eine Betriebsebene fuer moderne Kanzleien.",
     "platform.anwaltsoft.premium.desc":
@@ -5672,9 +5695,21 @@ const platformLocalizedOverrides: Partial<Record<Language, Record<string, string
 const platformListOverrides: Partial<Record<Language, typeof platformListBase>> = {
   de: {
     anwaltsoft: {
-      capability: ["Mandanten-CRM", "DMS-Demo", "Fristen und Kalender", "Rollenrechte", "beA-Module", "Kanzlei-Dashboards"],
+      capability: [
+        "Digitale Akten mit strukturierter Dokumentenablage",
+        "DMS-Demo fuer Kanzlei-Dokumentenworkflows",
+        "Fristen, Zeiterfassung und Kanzleiueberblick",
+        "beA Sync als mobiles App-Modul",
+        "Outlook-Weiterleitung als optionaler Kanal",
+        "Management-Dashboards fuer Partner und Backoffice",
+      ],
       geo: ["Kanzleisoftware", "LegalTech", "beA Integration", "Dokumentenmanagement Kanzlei"],
-      roadmap: ["Vorhandene DMS-Demo einbinden", "DMS-Modul ausbauen", "Kanzlei-Rollenmodell", "Admin- und Mandantenportal"],
+      roadmap: [
+        "Vorhandene AnwaltSoft DMS-Demo sichtbar verlinken",
+        "beA Sync als App-Modul zur Produktlinie ausbauen",
+        "Outlook-Weiterleitung als Kommunikationsfeature einordnen",
+        "Rollen, Adminbereich und spaeteres Mandantenportal vorbereiten",
+      ],
     },
     bea4outlook: {
       capability: ["Outlook E-Mails und beA Nachrichten in einer Ansicht", "Gruene Markierung fuer beA Nachrichten", "Softwarezertifikat-Login", "Hashdateien im beA Anhang", "Aktenzuordnung", "DMS-Anbindung"],
