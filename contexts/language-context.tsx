@@ -3030,6 +3030,92 @@ for (const language of languageOptions.map((option) => option.code)) {
   }
 }
 
+const contactInterestTranslations: Partial<Record<Language, Record<string, string>>> = {
+  de: {
+    "contact.interest.bea4outlook": "beA4Outlook",
+    "contact.interest.beaMailbox": "beA Postfach",
+    "contact.interest.anwaltsoft": "AnwaltSoft",
+    "contact.interest.lawyerSoftware": "Anwalt Software",
+    "contact.interest.dms": "DMS / Dokumentenmanagement",
+  },
+  en: {
+    "contact.interest.bea4outlook": "beA4Outlook",
+    "contact.interest.beaMailbox": "beA mailbox",
+    "contact.interest.anwaltsoft": "AnwaltSoft",
+    "contact.interest.lawyerSoftware": "Lawyer software",
+    "contact.interest.dms": "DMS / document management",
+  },
+  es: {
+    "contact.interest.beaMailbox": "Buzon beA",
+    "contact.interest.lawyerSoftware": "Software para abogados",
+    "contact.interest.dms": "DMS / gestion documental",
+  },
+  it: {
+    "contact.interest.beaMailbox": "Casella beA",
+    "contact.interest.lawyerSoftware": "Software per avvocati",
+    "contact.interest.dms": "DMS / gestione documentale",
+  },
+  fr: {
+    "contact.interest.beaMailbox": "Boite beA",
+    "contact.interest.lawyerSoftware": "Logiciel avocat",
+    "contact.interest.dms": "DMS / gestion documentaire",
+  },
+  nl: {
+    "contact.interest.beaMailbox": "beA-postvak",
+    "contact.interest.lawyerSoftware": "Advocatensoftware",
+    "contact.interest.dms": "DMS / documentbeheer",
+  },
+  pt: {
+    "contact.interest.beaMailbox": "Caixa postal beA",
+    "contact.interest.lawyerSoftware": "Software juridico",
+    "contact.interest.dms": "DMS / gestao documental",
+  },
+  ar: {
+    "contact.interest.beaMailbox": "صندوق بريد beA",
+    "contact.interest.lawyerSoftware": "برنامج للمحامين",
+    "contact.interest.dms": "DMS / إدارة المستندات",
+  },
+  zh: {
+    "contact.interest.beaMailbox": "beA 邮箱",
+    "contact.interest.lawyerSoftware": "律师软件",
+    "contact.interest.dms": "DMS / 文档管理",
+  },
+  ja: {
+    "contact.interest.beaMailbox": "beA メールボックス",
+    "contact.interest.lawyerSoftware": "弁護士向けソフトウェア",
+    "contact.interest.dms": "DMS / 文書管理",
+  },
+  th: {
+    "contact.interest.beaMailbox": "beA mailbox",
+    "contact.interest.lawyerSoftware": "ซอฟต์แวร์ทนายความ",
+    "contact.interest.dms": "DMS / จัดการเอกสาร",
+  },
+  fi: {
+    "contact.interest.beaMailbox": "beA-postilaatikko",
+    "contact.interest.lawyerSoftware": "Asianajajaohjelmisto",
+    "contact.interest.dms": "DMS / dokumentinhallinta",
+  },
+  sv: {
+    "contact.interest.beaMailbox": "beA-postlada",
+    "contact.interest.lawyerSoftware": "Advokatprogramvara",
+    "contact.interest.dms": "DMS / dokumenthantering",
+  },
+  "de-CH": {
+    "contact.interest.bea4outlook": "beA4Outlook",
+    "contact.interest.beaMailbox": "beA Postfach",
+    "contact.interest.anwaltsoft": "AnwaltSoft",
+    "contact.interest.lawyerSoftware": "Anwalt Software",
+    "contact.interest.dms": "DMS / Dokumentemanagement",
+  },
+}
+
+for (const language of languageOptions.map((option) => option.code)) {
+  contactInterestTranslations[language] = {
+    ...(contactInterestTranslations.en ?? {}),
+    ...(contactInterestTranslations[language] ?? {}),
+  }
+}
+
 const pricingPageTranslations: Partial<Record<Language, Record<string, string>>> = {
   de: {
     "pricing.title": "Enterprise Custom Solutions",
@@ -5912,6 +5998,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     ...(detailPageTranslations[language] ?? {}),
     ...(contactPageTranslations.en ?? {}),
     ...(contactPageTranslations[language] ?? {}),
+    ...(contactInterestTranslations.en ?? {}),
+    ...(contactInterestTranslations[language] ?? {}),
     ...(pricingPageTranslations.en ?? {}),
     ...(pricingPageTranslations[language] ?? {}),
     ...(feedAndSolutionsTranslations.en ?? {}),

@@ -12,6 +12,11 @@ import { Phone, Mail, Clock, CheckCircle } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 const contactProducts = [
+  { value: "beA4Outlook", labelKey: "contact.interest.bea4outlook" },
+  { value: "beA Postfach", labelKey: "contact.interest.beaMailbox" },
+  { value: "AnwaltSoft", labelKey: "contact.interest.anwaltsoft" },
+  { value: "Anwalt Software", labelKey: "contact.interest.lawyerSoftware" },
+  { value: "DMS / Dokumentenmanagement", labelKey: "contact.interest.dms" },
   { value: "Enterprise AI Chatbot", labelKey: "products.enterpriseAIChatbot.title" },
   { value: "Intelligent Voice Assistant", labelKey: "products.intelligentVoiceAssistant.title" },
   { value: "Business Process Automation", labelKey: "products.businessProcessAutomation.title" },
