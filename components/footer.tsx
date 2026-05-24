@@ -10,7 +10,16 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-slate-950 text-slate-300">
       <div className="container grid gap-8 px-4 py-10 md:grid-cols-4 md:px-6">
         <div className="md:col-span-2">
-          <h2 className="text-lg font-bold text-white">LetAIwork4u</h2>
+          <Link href="/" className="inline-flex items-center gap-4" aria-label="LetAIwork4u Home">
+            <span className="flex h-16 w-16 overflow-hidden rounded-lg border border-cyan-300/25 bg-slate-100 shadow-sm shadow-cyan-950/40">
+              <img
+                src="/brand/logo01.jpeg"
+                alt="LetAIwork4u Logo"
+                className="h-full w-full object-cover"
+              />
+            </span>
+            <span className="text-lg font-bold text-white">LetAIwork4u</span>
+          </Link>
           <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">{t("footer.desc")}</p>
         </div>
         <div>

@@ -10,6 +10,10 @@ import { MobileViewportHandler } from "@/components/mobile-viewport-handler"
 export const metadata = {
   title: "LETAIWORK4U - AI Solutions for Business",
   description: "Innovative AI solutions for modern businesses",
+  icons: {
+    icon: "/brand/logo01.jpeg",
+    apple: "/brand/logo01.jpeg",
+  },
     generator: 'v0.dev'
 }
 

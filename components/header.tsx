@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Bot, Menu, Mic, X } from "lucide-react"
+import { Menu, Mic, X } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { LanguageSwitcher } from "@/components/language-switcher"
@@ -28,9 +28,13 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-400 text-slate-950">
-            <Bot className="h-5 w-5" />
+        <Link href="/" className="flex items-center gap-3" aria-label="LetAIwork4u Home">
+          <span className="flex h-11 w-11 overflow-hidden rounded-lg border border-cyan-300/30 bg-slate-100 shadow-sm shadow-cyan-950/40">
+            <img
+              src="/brand/logo01.jpeg"
+              alt="LetAIwork4u Logo"
+              className="h-full w-full object-cover"
+            />
           </span>
           <span className="leading-tight">
             <span className="block font-bold text-white">LetAIwork4u</span>
