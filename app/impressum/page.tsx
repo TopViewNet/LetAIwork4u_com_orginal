@@ -5,41 +5,42 @@ export default function ImpressumPage() {
         <h1 className="text-4xl font-bold mb-6">Impressum</h1>
 
         <div className="prose dark:prose-invert max-w-none">
-          <h2>Company Information</h2>
+          <h2>Angaben gemaess § 5 TMG</h2>
           <p>
-            <strong>Company Name:</strong> LetAIWork4U UG
-          </p>
-
-          <h2>Contact Information</h2>
-          <p>
-            <strong>Phone:</strong> +49 93161423087
+            <strong>LetAIWork4U UG</strong>
             <br />
-            <strong>Email:</strong> contact@letaiwork4u.com
+            Sitz: Hoechberg, Deutschland
+          </p>
+
+          <h2>Kontakt</h2>
+          <p>
+            <strong>Telefon:</strong> +49 93161423087
             <br />
-            <strong>Registered Office:</strong> Höchberg, Germany
+            <strong>E-Mail:</strong> contact@letaiwork4u.com
           </p>
 
-          <h2>Legal Information</h2>
+          <h2>Registereintrag</h2>
           <p>
-            <strong>Commercial Register:</strong> Bavaria District Court Würzburg HRB 17771
+            <strong>Registergericht:</strong> Amtsgericht Wuerzburg
             <br />
-            <strong>Tax Number:</strong> 257/131/30195
+            <strong>Handelsregister:</strong> HRB 17771
+            <br />
+            <strong>Steuernummer:</strong> 257/131/30195
           </p>
 
-          <h2>Responsible for Content</h2>
+          <h2>Verantwortlich fuer den Inhalt</h2>
           <p>
-            The managing director of LetAIWork4U UG is responsible for the content of this website in accordance with §
-            55 Abs. 2 RStV.
+            Verantwortlich fuer den Inhalt dieser Webseite ist die Geschaeftsfuehrung der LetAIWork4U UG.
           </p>
 
-          <h2>Disclaimer</h2>
+          <h2>Haftung fuer Links</h2>
           <p>
-            Despite careful content control, we assume no liability for the content of external links. The operators of
-            the linked pages are solely responsible for their content.
+            Trotz sorgfaeltiger inhaltlicher Kontrolle uebernehmen wir keine Haftung fuer die Inhalte externer Links.
+            Fuer den Inhalt der verlinkten Seiten sind ausschliesslich deren Betreiber verantwortlich.
           </p>
 
-          <h2>Data Protection</h2>
-          <p>For information on how we handle your data, please refer to our Privacy Policy.</p>
+          <h2>Datenschutz</h2>
+          <p>Informationen zum Umgang mit personenbezogenen Daten finden Sie in der Datenschutzerklaerung.</p>
         </div>
       </div>
     </div>
