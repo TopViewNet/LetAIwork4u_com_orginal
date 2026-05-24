@@ -59,6 +59,11 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
                 <a href={`https://${platform.domain}`}>{platform.domain}</a>
               </Button>
             )}
+            {platform.slug === "anwaltsoft" && (
+              <Button asChild variant="outline" className="border-white/25 bg-slate-950/35 text-white backdrop-blur hover:bg-white/10">
+                <a href="https://anwaltsoftdemo.vercel.app/demo">{tr("platform.anwaltsoft.demoCta", "DMS-Demo ansehen")}</a>
+              </Button>
+            )}
           </div>
         </div>
       </section>
