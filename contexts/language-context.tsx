@@ -5971,6 +5971,51 @@ const platformsPageTranslations = Object.fromEntries(
   }),
 ) as Partial<Record<Language, Record<string, string>>>
 
+const footerBrandTranslations: Partial<Record<Language, Record<string, string>>> = {
+  de: {
+    "footer.desc": "LetAIwork4u ist das Dachunternehmen von AnwaltSoft, beA4Outlook, beA2Outlook und HandwerkerVoiceBot.",
+  },
+  en: {
+    "footer.desc": "LetAIwork4u is the umbrella company for AnwaltSoft, beA4Outlook, beA2Outlook, and HandwerkerVoiceBot.",
+  },
+  es: {
+    "footer.desc": "LetAIwork4u es la empresa paraguas de AnwaltSoft, beA4Outlook, beA2Outlook y HandwerkerVoiceBot.",
+  },
+  it: {
+    "footer.desc": "LetAIwork4u e la societa ombrello di AnwaltSoft, beA4Outlook, beA2Outlook e HandwerkerVoiceBot.",
+  },
+  ar: {
+    "footer.desc": "LetAIwork4u هي الشركة الأم لـ AnwaltSoft وbeA4Outlook وbeA2Outlook وHandwerkerVoiceBot.",
+  },
+  zh: {
+    "footer.desc": "LetAIwork4u 是 AnwaltSoft、beA4Outlook、beA2Outlook 和 HandwerkerVoiceBot 的母公司。",
+  },
+  ja: {
+    "footer.desc": "LetAIwork4u は AnwaltSoft、beA4Outlook、beA2Outlook、HandwerkerVoiceBot の統括会社です。",
+  },
+  th: {
+    "footer.desc": "LetAIwork4u เป็นบริษัทแม่ของ AnwaltSoft, beA4Outlook, beA2Outlook และ HandwerkerVoiceBot.",
+  },
+  fi: {
+    "footer.desc": "LetAIwork4u on AnwaltSoftin, beA4Outlookin, beA2Outlookin ja HandwerkerVoiceBotin kattava yhtiö.",
+  },
+  nl: {
+    "footer.desc": "LetAIwork4u is het overkoepelende bedrijf achter AnwaltSoft, beA4Outlook, beA2Outlook en HandwerkerVoiceBot.",
+  },
+  "de-CH": {
+    "footer.desc": "LetAIwork4u isch s Dachunternehmen vo AnwaltSoft, beA4Outlook, beA2Outlook und HandwerkerVoiceBot.",
+  },
+  fr: {
+    "footer.desc": "LetAIwork4u est la societe ombrelle d'AnwaltSoft, beA4Outlook, beA2Outlook et HandwerkerVoiceBot.",
+  },
+  sv: {
+    "footer.desc": "LetAIwork4u ar paraplybolaget for AnwaltSoft, beA4Outlook, beA2Outlook och HandwerkerVoiceBot.",
+  },
+  pt: {
+    "footer.desc": "LetAIwork4u e a empresa guarda-chuva de AnwaltSoft, beA4Outlook, beA2Outlook e HandwerkerVoiceBot.",
+  },
+}
+
 function explicitTranslations(language: Language) {
   const entries = Object.entries(translations[language] ?? {})
   if (language === "de") {
@@ -6010,6 +6055,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     ...(productsPageTranslations[language] ?? {}),
     ...(platformsPageTranslations.en ?? {}),
     ...(platformsPageTranslations[language] ?? {}),
+    ...(footerBrandTranslations.en ?? {}),
+    ...(footerBrandTranslations[language] ?? {}),
   }
 
   useEffect(() => {
