@@ -44,6 +44,15 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
           </Button>
 
           <div className={`mb-6 h-2 max-w-xl rounded-full bg-gradient-to-r ${platform.accent}`} />
+          {isAnwaltSoft && (
+            <div className="mb-8 max-w-md rounded-lg border border-white/10 bg-white/90 p-3 shadow-2xl shadow-cyan-950/30 backdrop-blur">
+              <img
+                src="/brand-identity/anwaltsoft-futuristic-wordmark.svg"
+                alt="AnwaltSoft"
+                className="h-auto w-full"
+              />
+            </div>
+          )}
           <p className="text-sm uppercase tracking-wide text-cyan-200">{tr(`${base}.eyebrow`, platform.eyebrow)}</p>
           <h1 className="mt-3 max-w-5xl text-4xl font-bold tracking-tight md:text-6xl">
             {tr(`${base}.headline`, platform.headline)}

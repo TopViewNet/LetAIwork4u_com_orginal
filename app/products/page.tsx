@@ -13,6 +13,7 @@ const products = [
     statusKey: "products.status.demo",
     icon: BriefcaseBusiness,
     image: "/brand-identity/anwaltsoft-identity-base.jpg",
+    logo: "/brand-identity/anwaltsoft-futuristic-wordmark.svg",
     accent: "from-sky-200 via-cyan-300 to-blue-700",
     featured: true,
     features: ["products.anwaltsoft.feature.1", "products.anwaltsoft.feature.2", "products.anwaltsoft.feature.3"],
@@ -125,6 +126,11 @@ export default function ProductsPage() {
                 </div>
 
                 <p className="text-sm uppercase tracking-wide text-cyan-200">{t(`products.${product.id}.eyebrow`)}</p>
+                {"logo" in product && product.logo ? (
+                  <div className="mt-3 rounded-lg border border-white/10 bg-white/95 p-2">
+                    <img src={product.logo} alt={t(`products.${product.id}.title`)} className="h-auto w-full" />
+                  </div>
+                ) : null}
                 <h2 className="mt-2 text-2xl font-bold tracking-tight">{t(`products.${product.id}.title`)}</h2>
                 <p className="mt-4 min-h-24 text-sm leading-6 text-slate-200">{t(`products.${product.id}.description`)}</p>
 
