@@ -153,20 +153,20 @@ export const platforms: Platform[] = [
   },
   {
     slug: "aviation",
-    name: "Aviation Hub",
-    eyebrow: "Helicopter, Airplanes, eVTOL",
+    name: "Ihr Projekt",
+    eyebrow: "Neue Plattformidee",
     status: "planned",
-    headline: "Aviation-Content und Plattformideen fuer Hubschrauber, Motorflugzeuge und eVTOLs.",
+    headline: "Hier koennte Ihr digitales Produkt, Ihre Plattform oder Ihre AI-Idee entstehen.",
     summary:
-      "Durch eigene Lizenz und Praxiserfahrung kann Aviation als glaubwuerdiger, hochwertiger Themenhub wachsen.",
-    audience: "Piloten, Fluginteressierte, Betreiber, Mobility- und eVTOL-Interessierte.",
-    promise: "Aviation-Wissen, Zukunftsmobilitaet und digitale Tools unter einer klaren Plattform.",
-    accent: "from-sky-200 via-indigo-300 to-slate-800",
+      "Diese Kachel steht bewusst offen fuer neue Kundenprojekte: von der hochwertigen Webseite ueber Web-App und KI-Automation bis zur eigenen Plattform.",
+    audience: "Unternehmer, Kanzleien, Mittelstand, Immobilienprofis, Handwerk, Coaches, Spezialisten und Gruender mit einer konkreten Idee.",
+    promise: "Aus einer Idee wird ein sichtbares, strukturiertes und professionell positioniertes digitales Produkt.",
+    accent: "from-white via-cyan-200 to-blue-600",
     visualDirection:
-      "Aviation-Hub: Cockpit, Heli, Motorflug, eVTOL, technische Eleganz, persoenliche Lizenz-Kompetenz statt Stock-Luftfahrt.",
-    capabilities: ["Aviation Content", "eVTOL Radar", "Pilotenerfahrung", "Aircraft Profiles", "Training Content", "Mobility Trends"],
-    geoTopics: ["eVTOL", "Helikopter", "Motorflug", "Aviation Mobility"],
-    roadmap: ["Aviation Journal", "eVTOL-Datenbank", "Pilot-Content", "Partner- und Projektseiten"],
+      "Offene Projektbuehne: hochwertig, hell, vertrauenswuerdig, mit Platz fuer Kundenmarke, Produktidee, Demo, Kontaktstrecke und spaetere Plattformmodule.",
+    capabilities: ["Strategie und Positionierung", "Webseite oder Web-App", "AI- und Voicebot-Integration", "Produktdemo", "Kontakt- und Leadstrecke", "Skalierbare Plattformstruktur"],
+    geoTopics: ["Ihr Projekt", "AI Plattform", "Web-App Entwicklung", "Digitale Produktidee"],
+    roadmap: ["Erstgespraech und Zielbild", "Design- und Inhaltskonzept", "MVP oder Demo", "Launch und Weiterentwicklung"],
   },
 ]
 
