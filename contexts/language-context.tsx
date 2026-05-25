@@ -92,9 +92,9 @@ const defaultTranslations: Record<string, string> = {
   "platform.bea4outlook.summary":
     "beA-Nachrichten und Outlook E-Mails in einer vertrauten Arbeitsumgebung, inklusive Hashdateien und Zertifikatslogin.",
   "platforms.badge": "Plattform-System",
-  "platforms.title": "Eine Dachmarke, viele Plattformen, klare Struktur fuer alles, was noch kommt.",
+  "platforms.title": "LetAIwork4u verbindet LegalTech, Voicebots und neue AI-Produkte zu einem starken Plattform-Oekosystem.",
   "platforms.subtitle":
-    "LetAIwork4u wird als Innovation Hub aufgebaut. Jede neue Idee bekommt eine eigene Plattformlogik, eigene Zielgruppe, eigene GEO-Themen und eine klare Verbindung zur Muttermarke.",
+    "AnwaltSoft, beA4Outlook und HandwerkerVoiceBot stehen fuer konkrete Produkte mit eigenem Profil. Neue Bereiche wie Robotik, Immobilien, Mobility und Aviation koennen daraus professionell weiterwachsen.",
   "platform.status.flagship": "Flagship",
   "platform.status.active": "Aktiv",
   "platform.status.lab": "Lab",
@@ -464,9 +464,9 @@ const translations: Partial<Record<Language, Record<string, string>>> = {
     "footer.desc": "Umbrella brand for AI integration, voicebots, LegalTech, software, web design, and new AI projects.",
     "common.learnMore": "Learn more",
     "platforms.badge": "Platform System",
-    "platforms.title": "One umbrella brand, many platforms, clear structure for everything still to come.",
+    "platforms.title": "LetAIwork4u connects LegalTech, voicebots, and new AI products into one premium platform ecosystem.",
     "platforms.subtitle":
-      "LetAIwork4u is being built as an innovation hub. Every new idea gets its own platform logic, audience, GEO topics, and clear connection to the parent brand.",
+      "AnwaltSoft, beA4Outlook, and HandwerkerVoiceBot stand as concrete products with their own profiles. New areas such as robotics, real estate, mobility, and aviation can grow from this structure professionally.",
     "platform.status.flagship": "Flagship",
     "platform.status.active": "Active",
     "platform.status.lab": "Lab",
@@ -5204,9 +5204,9 @@ const productsPageTranslations = Object.fromEntries(
 
 const platformBaseKeys: Record<string, string> = {
   "platforms.badge": "Platform System",
-  "platforms.title": "One umbrella brand, many platforms, clear structure for everything still to come.",
+  "platforms.title": "LetAIwork4u connects LegalTech, voicebots, and new AI products into one premium platform ecosystem.",
   "platforms.subtitle":
-    "LetAIwork4u is being built as an innovation hub. Every new idea gets its own platform logic, audience, GEO topics, and clear connection to the parent brand.",
+    "AnwaltSoft, beA4Outlook, and HandwerkerVoiceBot stand as concrete products with their own profiles. New areas such as robotics, real estate, mobility, and aviation can grow from this structure professionally.",
   "platform.status.flagship": "Flagship",
   "platform.status.active": "Active",
   "platform.status.lab": "Lab",
@@ -5352,9 +5352,9 @@ const platformListBase = {
 const platformLocalizedOverrides: Partial<Record<Language, Record<string, string>>> = {
   de: {
     "platforms.badge": "Plattform-System",
-    "platforms.title": "Eine Dachmarke, viele Plattformen, klare Struktur fuer alles, was noch kommt.",
+    "platforms.title": "LetAIwork4u verbindet LegalTech, Voicebots und neue AI-Produkte zu einem starken Plattform-Oekosystem.",
     "platforms.subtitle":
-      "LetAIwork4u wird als Innovationshub aufgebaut. Jede neue Idee bekommt eigene Plattformlogik, Zielgruppe, GEO-Themen und eine klare Verbindung zur Dachmarke.",
+      "AnwaltSoft, beA4Outlook und HandwerkerVoiceBot stehen fuer konkrete Produkte mit eigenem Profil. Neue Bereiche wie Robotik, Immobilien, Mobility und Aviation koennen daraus professionell weiterwachsen.",
     "platform.status.flagship": "Flagship",
     "platform.status.active": "Aktiv",
     "platform.status.lab": "Lab",
