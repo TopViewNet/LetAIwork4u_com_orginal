@@ -12,7 +12,7 @@ import { Phone, Mail, Clock, CheckCircle } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 const contactProducts = [
-  { value: "beA4Outlook", labelKey: "contact.interest.bea4outlook" },
+  { value: "beA Mobile Sync / beA4Outlook", labelKey: "contact.interest.beamobilesync" },
   { value: "beA Postfach", labelKey: "contact.interest.beaMailbox" },
   { value: "AnwaltSoft", labelKey: "contact.interest.anwaltsoft" },
   { value: "Anwalt Software", labelKey: "contact.interest.lawyerSoftware" },

@@ -13,6 +13,7 @@ const platformHeroImages: Record<string, string> = {
 export function PlatformDetailClient({ platform }: { platform: Platform }) {
   const { t } = useLanguage()
   const isAnwaltSoft = platform.slug === "anwaltsoft"
+  const isBeaMobileSync = platform.slug === "beamobilesync"
   const tr = (key: string, fallback: string) => {
     const value = t(key)
     return value === key ? fallback : value
@@ -154,6 +155,26 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
         </section>
       )}
 
+      {isBeaMobileSync && (
+        <section className="container px-4 pb-20 md:px-6">
+          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="rounded-lg border border-cyan-200/20 bg-[linear-gradient(135deg,rgba(14,165,233,0.15),rgba(124,58,237,0.12))] p-6 shadow-2xl shadow-cyan-950/25">
+              <p className="text-sm uppercase tracking-wide text-cyan-200">{t("platform.beamobilesync.strategy.eyebrow")}</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight">{t("platform.beamobilesync.strategy.title")}</h2>
+              <p className="mt-4 leading-7 text-slate-300">{t("platform.beamobilesync.strategy.desc")}</p>
+            </div>
+            <div className="grid gap-3">
+              {["1", "2", "3", "4"].map((item) => (
+                <div key={item} className="rounded-lg border border-cyan-200/15 bg-slate-900/80 p-4 shadow-sm shadow-cyan-950/30">
+                  <h3 className="font-semibold text-white">{t(`platform.beamobilesync.strategy.point.${item}.title`)}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{t(`platform.beamobilesync.strategy.point.${item}.desc`)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {platform.slug === "voicebot" && (
         <section className="container px-4 pb-16 md:px-6">
           <div className="rounded-lg border border-white/10 bg-white/5 p-6">
@@ -176,10 +197,10 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
         <div className="rounded-lg border border-white/10 bg-white/5 p-5">
           <h2 className="flex items-center gap-2 text-xl font-semibold">
             <Sparkles className="h-5 w-5 text-cyan-300" />
-            {isAnwaltSoft ? t("platform.anwaltsoft.next.title") : t("platform.detail.nextStep")}
+            {isAnwaltSoft ? t("platform.anwaltsoft.next.title") : isBeaMobileSync ? t("platform.beamobilesync.next.title") : t("platform.detail.nextStep")}
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
-            {isAnwaltSoft ? t("platform.anwaltsoft.next.desc") : t("platform.detail.nextStepDesc")}
+            {isAnwaltSoft ? t("platform.anwaltsoft.next.desc") : isBeaMobileSync ? t("platform.beamobilesync.next.desc") : t("platform.detail.nextStepDesc")}
           </p>
           {isAnwaltSoft && (
             <div className="mt-5 flex flex-wrap gap-3">
