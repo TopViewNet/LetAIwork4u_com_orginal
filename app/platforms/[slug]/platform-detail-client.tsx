@@ -8,6 +8,7 @@ import { useLanguage } from "@/contexts/language-context"
 
 const platformHeroImages: Record<string, string> = {
   anwaltsoft: "/platforms/anwaltsoft-hero.jpg",
+  hermes: "/hermes/hermes-agent-teaser.svg",
 }
 
 export function PlatformDetailClient({ platform }: { platform: Platform }) {

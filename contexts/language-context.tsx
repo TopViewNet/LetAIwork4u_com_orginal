@@ -121,10 +121,10 @@ const defaultTranslations: Record<string, string> = {
   "platform.immobilien.name": "Immobilien Platform",
   "platform.immobilien.summary": "Immobilienkompetenz, KI und digitale Prozesse fuer Bewertung, Vermarktung und Deals.",
   "platform.immobilien.visualDirection": "Premium-Immobilienoptik mit Objekten, Bewertung, Marktanalyse und serioesen Visuals.",
-  "platform.thailand-minivan.eyebrow": "Mobility App",
-  "platform.thailand-minivan.name": "Thailand Mini Van App",
-  "platform.thailand-minivan.summary": "Mobile Plattform fuer Mini-Van-Services, Buchung, Routen, Partner und Kundenkommunikation.",
-  "platform.thailand-minivan.visualDirection": "Mobile-first Mobility-App mit Thailand-Routen, Mini-Vans, Karten und Buchungsflow.",
+  "platform.hermes.eyebrow": "Telegram AI Agent",
+  "platform.hermes.name": "HERMES AI Agent",
+  "platform.hermes.summary": "Steuerbarer AI-Agent auf Hetzner Cloud mit Telegram-Bedienung, OpenAI-/Codex-Workflows und sicherer Uebergabe.",
+  "platform.hermes.visualDirection": "Premium AI-Agent mit HERMES-Logo, Cloud-Infrastruktur, Telegram-Steuerung und klarer Sicherheitsuebergabe.",
   "platform.aviation.eyebrow": "Neue Plattformidee",
   "platform.aviation.name": "Ihr Projekt",
   "platform.aviation.summary": "Hier koennte Ihr digitales Produkt, Ihre Web-App oder Ihre AI-Plattform entstehen.",
@@ -147,9 +147,9 @@ const defaultTranslations: Record<string, string> = {
   "platform.immobilien.headline": "Immobilienkompetenz, KI und digitale Prozesse fuer Bewertung, Vermarktung und Deals.",
   "platform.immobilien.audience": "Eigentuemer, Investoren, Makler, Projektentwickler und Immobilienkunden.",
   "platform.immobilien.promise": "Kompetenz sichtbar machen und digitale Immobilienprozesse hochwertig fuehren.",
-  "platform.thailand-minivan.headline": "Eine schlanke Mobility-Plattform fuer Mini-Van-Services, Buchung und lokale Routen.",
-  "platform.thailand-minivan.audience": "Reisende, lokale Betreiber, Fahrer, Hotels und Touranbieter.",
-  "platform.thailand-minivan.promise": "Einfache Buchung und klare Kommunikation fuer regionale Mobilitaet.",
+  "platform.hermes.headline": "Steuerbare AI auf eigener Hetzner Cloud, bedienbar per Telegram.",
+  "platform.hermes.audience": "Unternehmer, Management, Projektteams, Kanzleien und Entscheider, die AI kontrolliert testen wollen.",
+  "platform.hermes.promise": "Schnell mit AI-Agenten experimentieren, ohne sofort eine grosse interne Plattform aufzubauen.",
   "platform.aviation.headline": "Hier koennte Ihr digitales Produkt, Ihre Plattform oder Ihre AI-Idee entstehen.",
   "platform.aviation.audience": "Unternehmer, Kanzleien, Mittelstand, Immobilienprofis, Handwerk, Coaches, Spezialisten und Gruender.",
   "platform.aviation.promise": "Aus einer Idee wird ein sichtbares, strukturiertes und professionell positioniertes digitales Produkt.",
@@ -576,10 +576,10 @@ const translations: Partial<Record<Language, Record<string, string>>> = {
     "platform.immobilien.name": "Real Estate Platform",
     "platform.immobilien.summary": "Real estate expertise, AI, and digital processes for valuation, marketing, and deals.",
     "platform.immobilien.visualDirection": "Premium real-estate visuals with objects, valuation, market analysis, and calm credibility.",
-    "platform.thailand-minivan.eyebrow": "Mobility App",
-    "platform.thailand-minivan.name": "Thailand Mini Van App",
-    "platform.thailand-minivan.summary": "Mobile platform for mini-van services, booking, routes, partners, and customer communication.",
-    "platform.thailand-minivan.visualDirection": "Mobile-first mobility app with Thailand routes, mini-vans, maps, and booking flow.",
+    "platform.hermes.eyebrow": "Telegram AI Agent",
+    "platform.hermes.name": "HERMES AI Agent",
+    "platform.hermes.summary": "Controllable AI agent on Hetzner Cloud with Telegram operation, OpenAI/Codex workflows, and secure handover.",
+    "platform.hermes.visualDirection": "Premium AI agent with HERMES logo, cloud infrastructure, Telegram control, and clear security handover.",
     "platform.aviation.eyebrow": "New Platform Idea",
     "platform.aviation.name": "Your Project",
     "platform.aviation.summary": "This could become your digital product, web app, or AI platform.",
@@ -601,9 +601,9 @@ const translations: Partial<Record<Language, Record<string, string>>> = {
     "platform.immobilien.headline": "Real estate expertise, AI, and digital processes for valuation, marketing, and deals.",
     "platform.immobilien.audience": "Owners, investors, agents, developers, and real-estate clients.",
     "platform.immobilien.promise": "Make expertise visible and guide real-estate processes with premium digital quality.",
-    "platform.thailand-minivan.headline": "A lean mobility platform for mini-van services, booking, and local routes.",
-    "platform.thailand-minivan.audience": "Travelers, local operators, drivers, hotels, and tour providers.",
-    "platform.thailand-minivan.promise": "Simple booking and clear communication for regional mobility.",
+    "platform.hermes.headline": "Controllable AI on your own Hetzner Cloud, operated through Telegram.",
+    "platform.hermes.audience": "Entrepreneurs, management, project teams, law firms, and decision-makers who want to test AI in a controlled way.",
+    "platform.hermes.promise": "Experiment with AI agents quickly without building a large internal platform first.",
     "platform.aviation.headline": "This could become your digital product, platform, or AI idea.",
     "platform.aviation.audience": "Entrepreneurs, law firms, SMEs, real estate experts, trades, coaches, specialists, and founders.",
     "platform.aviation.promise": "An idea becomes a visible, structured, and professionally positioned digital product.",
@@ -5390,13 +5390,13 @@ const platformBaseKeys: Record<string, string> = {
   "platform.immobilien.audience": "Owners, investors, agents, developers, and real-estate clients.",
   "platform.immobilien.promise": "Make expertise visible and guide real-estate processes with premium digital quality.",
   "platform.immobilien.visualDirection": "Premium real-estate visuals with objects, valuation, market analysis, and calm credibility.",
-  "platform.thailand-minivan.eyebrow": "Mobility App",
-  "platform.thailand-minivan.name": "Thailand Mini Van App",
-  "platform.thailand-minivan.summary": "Mobile platform for mini-van services, booking, routes, partners, and customer communication.",
-  "platform.thailand-minivan.headline": "A lean mobility platform for mini-van services, booking, and local routes.",
-  "platform.thailand-minivan.audience": "Travelers, local operators, drivers, hotels, and tour providers.",
-  "platform.thailand-minivan.promise": "Simple booking and clear communication for regional mobility.",
-  "platform.thailand-minivan.visualDirection": "Mobile-first mobility app with Thailand routes, mini-vans, maps, and booking flow.",
+  "platform.hermes.eyebrow": "Telegram AI Agent",
+  "platform.hermes.name": "HERMES AI Agent",
+  "platform.hermes.summary": "Controllable AI agent on Hetzner Cloud with Telegram operation, OpenAI/Codex workflows, and secure handover.",
+  "platform.hermes.headline": "Controllable AI on your own Hetzner Cloud, operated through Telegram.",
+  "platform.hermes.audience": "Entrepreneurs, management, project teams, law firms, and decision-makers who want to test AI in a controlled way.",
+  "platform.hermes.promise": "Experiment with AI agents quickly without building a large internal platform first.",
+  "platform.hermes.visualDirection": "Premium AI agent with HERMES logo, cloud infrastructure, Telegram control, and clear security handover.",
   "platform.aviation.eyebrow": "New Platform Idea",
   "platform.aviation.name": "Your Project",
   "platform.aviation.summary": "This could become your digital product, web app, or AI platform.",
@@ -5454,10 +5454,22 @@ const platformListBase = {
     geo: ["Real estate valuation", "Real estate AI", "Real estate platform", "Broker digitalization"],
     roadmap: ["Expertise page", "Property and case structure", "Valuation request", "AI exposé generator"],
   },
-  "thailand-minivan": {
-    capability: ["Routes", "Booking", "Driver profiles", "Notifications", "Partner hotels", "Multilingual support"],
-    geo: ["Thailand Minivan", "Transfer App Thailand", "Mobility Booking", "Travel Transport"],
-    roadmap: ["MVP concept", "Route model", "Booking flow", "Operator dashboard"],
+  hermes: {
+    capability: [
+      "Installation on Hetzner Cloud",
+      "Telegram control for management and teams",
+      "OpenAI API, ChatGPT, and Codex workflows",
+      "Research, summaries, and task lists",
+      "Password, token, and SSH handover",
+      "Optional support and expansion",
+    ],
+    geo: ["HERMES AI Agent", "Telegram AI Agent", "Hetzner Cloud AI", "AI agent for companies"],
+    roadmap: [
+      "Offer pilot setup for interested companies",
+      "Document installation and handover process",
+      "Show use cases for management and project teams",
+      "Expand optional workflows and support packages",
+    ],
   },
   aviation: {
     capability: ["Strategy and positioning", "Website or web app", "AI and voicebot integration", "Product demo", "Contact and lead flow", "Scalable platform structure"],
@@ -6125,7 +6137,7 @@ const platformDeepListOverrides: Partial<Record<Language, typeof platformListBas
   },
 }
 
-const productsPlatformSlugs = ["anwaltsoft", "bea4outlook", "voicebot", "robotics", "immobilien", "thailand-minivan", "aviation"] as const
+const productsPlatformSlugs = ["anwaltsoft", "bea4outlook", "voicebot", "robotics", "immobilien", "hermes", "aviation"] as const
 const platformListTypes = ["capability", "geo", "roadmap"] as const
 
 const platformsPageTranslations = Object.fromEntries(
@@ -6139,7 +6151,9 @@ const platformsPageTranslations = Object.fromEntries(
 
     productsPlatformSlugs.forEach((slug) => {
       platformListTypes.forEach((type) => {
-        listData[slug][type].forEach((item, index) => {
+        const items = listData[slug]?.[type] ?? platformListBase[slug]?.[type] ?? []
+
+        items.forEach((item, index) => {
           entries[`platform.${slug}.${type}.${index}`] = item
         })
       })

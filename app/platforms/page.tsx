@@ -8,6 +8,7 @@ import { useLanguage } from "@/contexts/language-context"
 
 const platformTeaserImages: Record<string, string> = {
   anwaltsoft: "/brand-identity/anwaltsoft-identity-base.jpg",
+  hermes: "/hermes/hermes-agent-teaser.svg",
 }
 
 export default function PlatformsPage() {
