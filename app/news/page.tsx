@@ -13,7 +13,7 @@ const featuredPosts = [
     author: "LetAIwork4u Lab",
     dateKey: "news.date.may2026",
     tags: ["news.tag.platform", "news.tag.voicebot", "news.tag.legaltech"],
-    stats: { likes: 42, comments: 8, reposts: 5 },
+    stats: { likes: 12, comments: 3, reposts: 2 },
   },
   {
     id: "anwaltsoft-bea-dms",
