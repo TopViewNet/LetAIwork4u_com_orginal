@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Bot, CalendarDays, Heart, MessageCircle, Repeat2, Rocket, Share2, Sparkles } from "lucide-react"
+import { Bot, CalendarDays, MessageCircle, Repeat2, Rocket, Share2, Sparkles, ThumbsDown, ThumbsUp } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 const featuredPosts = [
@@ -13,7 +13,12 @@ const featuredPosts = [
     author: "LetAIwork4u Lab",
     dateKey: "news.date.june2026",
     tags: ["news.tag.hermes", "news.tag.aiAgent", "news.tag.telegram", "news.tag.hetzner"],
-    stats: { likes: 9, comments: 2, reposts: 1 },
+    media: {
+      type: "animation",
+      src: "/hermes/hermes-agent-teaser.svg",
+      labelKey: "news.media.hermes",
+    },
+    stats: { likes: 9, dislikes: 0, comments: 2, reposts: 1 },
   },
   {
     id: "letaiwork4u-platform-roadmap",
@@ -21,7 +26,12 @@ const featuredPosts = [
     author: "LetAIwork4u Lab",
     dateKey: "news.date.may2026",
     tags: ["news.tag.platform", "news.tag.voicebot", "news.tag.legaltech"],
-    stats: { likes: 12, comments: 3, reposts: 2 },
+    media: {
+      type: "image",
+      src: "/brand/logo01.jpeg",
+      labelKey: "news.media.platform",
+    },
+    stats: { likes: 12, dislikes: 1, comments: 3, reposts: 2 },
   },
   {
     id: "anwaltsoft-bea-dms",
@@ -29,7 +39,12 @@ const featuredPosts = [
     author: "AnwaltSoft",
     dateKey: "news.date.may2026",
     tags: ["news.tag.anwaltsoft", "news.tag.dms", "news.tag.bea"],
-    stats: { likes: 31, comments: 4, reposts: 3 },
+    media: {
+      type: "image",
+      src: "/brand-identity/anwaltsoft-identity-base.jpg",
+      labelKey: "news.media.anwaltsoft",
+    },
+    stats: { likes: 31, dislikes: 1, comments: 4, reposts: 3 },
   },
   {
     id: "local-ai-gemma-lab",
@@ -37,7 +52,12 @@ const featuredPosts = [
     author: "AI Radar",
     dateKey: "news.date.may2026",
     tags: ["news.tag.localAI", "news.tag.gemma", "news.tag.automation"],
-    stats: { likes: 55, comments: 12, reposts: 9 },
+    media: {
+      type: "image",
+      src: "/brand/logo01.jpeg",
+      labelKey: "news.media.localAI",
+    },
+    stats: { likes: 55, dislikes: 2, comments: 12, reposts: 9 },
   },
 ]
 
@@ -117,47 +137,72 @@ export default function NewsPage() {
           </div>
 
           {featuredPosts.map((post) => (
-            <article key={post.id} className="rounded-lg border border-white/10 bg-white/5 p-5">
-              <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-slate-400">
-                <Badge variant="outline" className="border-cyan-300/30 text-cyan-200">
-                  {t(post.typeKey)}
-                </Badge>
-                <span>{post.author}</span>
-                <span className="flex items-center gap-1">
-                  <CalendarDays className="h-4 w-4" />
-                  {t(post.dateKey)}
-                </span>
-              </div>
-              <Link href={`/news/${post.id}`} className="block hover:text-cyan-200">
-                <h2 className="text-2xl font-bold">{t(`news.post.${post.id}.title`)}</h2>
-              </Link>
-              <p className="mt-3 leading-7 text-slate-300">{t(`news.post.${post.id}.excerpt`)}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="rounded-md bg-slate-900 px-2 py-1 text-xs text-slate-300">
-                    #{t(tag)}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-sm text-slate-400">
-                <div className="flex gap-4">
-                  <span className="flex items-center gap-1">
-                    <Heart className="h-4 w-4" />
-                    {post.stats.likes}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <MessageCircle className="h-4 w-4" />
-                    {post.stats.comments}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Repeat2 className="h-4 w-4" />
-                    {post.stats.reposts}
-                  </span>
+            <article key={post.id} className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.055]">
+              <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_310px] xl:grid-cols-[minmax(0,1fr)_360px]">
+                <div className="flex min-h-[320px] flex-col p-5">
+                  <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                    <Badge variant="outline" className="border-cyan-300/30 text-cyan-200">
+                      {t(post.typeKey)}
+                    </Badge>
+                    <span>{post.author}</span>
+                    <span className="flex items-center gap-1">
+                      <CalendarDays className="h-4 w-4" />
+                      {t(post.dateKey)}
+                    </span>
+                  </div>
+                  <Link href={`/news/${post.id}`} className="block hover:text-cyan-200">
+                    <h2 className="text-2xl font-bold leading-tight">{t(`news.post.${post.id}.title`)}</h2>
+                  </Link>
+                  <p className="mt-3 leading-7 text-slate-300">{t(`news.post.${post.id}.excerpt`)}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <span key={tag} className="rounded-md bg-slate-900 px-2 py-1 text-xs text-slate-300">
+                        #{t(tag)}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4 text-sm text-slate-400">
+                    <div className="flex flex-wrap gap-2">
+                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-cyan-300 hover:text-slate-950">
+                        <ThumbsUp className="h-4 w-4" />
+                        {post.stats.likes}
+                      </button>
+                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-rose-300 hover:text-slate-950">
+                        <ThumbsDown className="h-4 w-4" />
+                        {post.stats.dislikes}
+                      </button>
+                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-white/15 hover:text-white">
+                        <MessageCircle className="h-4 w-4" />
+                        {post.stats.comments}
+                      </button>
+                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-white/15 hover:text-white">
+                        <Repeat2 className="h-4 w-4" />
+                        {post.stats.reposts}
+                      </button>
+                    </div>
+                    <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white">
+                      <Share2 className="mr-2 h-4 w-4" />
+                      {t("news.share")}
+                    </Button>
+                  </div>
                 </div>
-                <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white">
-                  <Share2 className="mr-2 h-4 w-4" />
-                  {t("news.share")}
-                </Button>
+
+                <Link
+                  href={`/news/${post.id}`}
+                  className="group relative min-h-[240px] overflow-hidden border-t border-white/10 bg-slate-900 lg:border-l lg:border-t-0"
+                >
+                  <img
+                    src={post.media.src}
+                    alt={t(post.media.labelKey)}
+                    className="h-full min-h-[240px] w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.18)_46%,rgba(2,6,23,0.72)_100%)]" />
+                  <div className="absolute inset-x-0 bottom-0 p-4">
+                    <span className="rounded-md border border-white/15 bg-slate-950/75 px-2 py-1 text-xs font-medium text-cyan-100 backdrop-blur">
+                      {t(post.media.labelKey)}
+                    </span>
+                  </div>
+                </Link>
               </div>
             </article>
           ))}
