@@ -14,8 +14,9 @@ const featuredPosts = [
     dateKey: "news.date.june2026",
     tags: ["news.tag.hermes", "news.tag.aiAgent", "news.tag.telegram", "news.tag.hetzner"],
     media: {
-      type: "animation",
+      type: "hermes",
       src: "/hermes/hermes-agent-teaser.svg",
+      logoSrc: "/hermes/hermes-logo.jpg",
       labelKey: "news.media.hermes",
     },
     stats: { likes: 9, dislikes: 0, comments: 2, reposts: 1 },
@@ -54,7 +55,7 @@ const featuredPosts = [
     tags: ["news.tag.localAI", "news.tag.gemma", "news.tag.automation"],
     media: {
       type: "image",
-      src: "/brand/logo01.jpeg",
+      src: "/news/ai-radar-visual.svg",
       labelKey: "news.media.localAI",
     },
     stats: { likes: 55, dislikes: 2, comments: 12, reposts: 9 },
@@ -191,11 +192,27 @@ export default function NewsPage() {
                   href={`/news/${post.id}`}
                   className="group relative min-h-[240px] overflow-hidden border-t border-white/10 bg-slate-900 lg:border-l lg:border-t-0"
                 >
-                  <img
-                    src={post.media.src}
-                    alt={t(post.media.labelKey)}
-                    className="h-full min-h-[240px] w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
+                  {post.media.type === "hermes" ? (
+                    <div className="relative h-full min-h-[320px] w-full bg-slate-950">
+                      <img
+                        src={post.media.src}
+                        alt={t(post.media.labelKey)}
+                        className="absolute inset-0 h-full w-full object-cover opacity-95 transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.16)_0%,rgba(2,6,23,0.28)_44%,rgba(2,6,23,0.78)_100%)]" />
+                      <img
+                        src={post.media.logoSrc}
+                        alt="HERMES AI Agent Logo"
+                        className="absolute right-4 top-4 h-24 w-24 rounded-lg border border-white/15 object-cover shadow-2xl shadow-cyan-950/40 md:h-28 md:w-28"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={post.media.src}
+                      alt={t(post.media.labelKey)}
+                      className="h-full min-h-[240px] w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08)_0%,rgba(2,6,23,0.18)_46%,rgba(2,6,23,0.72)_100%)]" />
                   <div className="absolute inset-x-0 bottom-0 p-4">
                     <span className="rounded-md border border-white/15 bg-slate-950/75 px-2 py-1 text-xs font-medium text-cyan-100 backdrop-blur">
