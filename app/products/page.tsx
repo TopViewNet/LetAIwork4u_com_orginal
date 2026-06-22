@@ -13,7 +13,7 @@ const products = [
     statusKey: "products.status.demo",
     icon: BriefcaseBusiness,
     image: "/brand-identity/anwaltsoft-identity-base.jpg",
-    logo: "/brand-identity/anwaltsoft-futuristic-wordmark.svg",
+    logo: "/brand-identity/AnwaltSoft%20Logo.png",
     accent: "from-sky-200 via-cyan-300 to-blue-700",
     featured: true,
     features: ["products.anwaltsoft.feature.1", "products.anwaltsoft.feature.2", "products.anwaltsoft.feature.3"],

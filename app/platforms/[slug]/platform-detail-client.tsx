@@ -45,9 +45,9 @@ export function PlatformDetailClient({ platform }: { platform: Platform }) {
 
           <div className={`mb-6 h-2 max-w-xl rounded-full bg-gradient-to-r ${platform.accent}`} />
           {isAnwaltSoft && (
-            <div className="mb-8 max-w-md rounded-lg border border-white/10 bg-white/90 p-3 shadow-2xl shadow-cyan-950/30 backdrop-blur">
+            <div className="mb-8 max-w-2xl rounded-lg border border-white/10 bg-white/95 p-3 shadow-2xl shadow-cyan-950/30 backdrop-blur">
               <img
-                src="/brand-identity/anwaltsoft-futuristic-wordmark.svg"
+                src="/brand-identity/AnwaltSoft%20Logo.png"
                 alt="AnwaltSoft"
                 className="h-auto w-full"
               />
