@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -64,8 +65,104 @@ const featuredPosts = [
 
 const channels = ["all", "ai", "projects", "voicebots", "legaltech", "robotics", "openSource", "practice"]
 
+type ReactionState = {
+  likes: number
+  dislikes: number
+  comments: number
+  reposts: number
+  vote: "like" | "dislike" | null
+  reposted: boolean
+  commentsOpen: boolean
+  draft: string
+  localComments: string[]
+}
+
 export default function NewsPage() {
   const { t } = useLanguage()
+  const [reactions, setReactions] = useState<Record<string, ReactionState>>(() =>
+    Object.fromEntries(
+      featuredPosts.map((post) => [
+        post.id,
+        {
+          ...post.stats,
+          vote: null,
+          reposted: false,
+          commentsOpen: false,
+          draft: "",
+          localComments: [],
+        },
+      ]),
+    ),
+  )
+
+  const updateReaction = (postId: string, updater: (state: ReactionState) => ReactionState) => {
+    setReactions((current) => ({
+      ...current,
+      [postId]: updater(current[postId]),
+    }))
+  }
+
+  const toggleVote = (postId: string, vote: "like" | "dislike") => {
+    updateReaction(postId, (state) => {
+      const next = { ...state }
+
+      if (state.vote === vote) {
+        next.vote = null
+        next[vote === "like" ? "likes" : "dislikes"] -= 1
+        return next
+      }
+
+      if (state.vote === "like") next.likes -= 1
+      if (state.vote === "dislike") next.dislikes -= 1
+
+      next.vote = vote
+      next[vote === "like" ? "likes" : "dislikes"] += 1
+      return next
+    })
+  }
+
+  const toggleRepost = (postId: string) => {
+    updateReaction(postId, (state) => ({
+      ...state,
+      reposted: !state.reposted,
+      reposts: state.reposted ? state.reposts - 1 : state.reposts + 1,
+    }))
+  }
+
+  const toggleComments = (postId: string) => {
+    updateReaction(postId, (state) => ({ ...state, commentsOpen: !state.commentsOpen }))
+  }
+
+  const setCommentDraft = (postId: string, draft: string) => {
+    updateReaction(postId, (state) => ({ ...state, draft }))
+  }
+
+  const addComment = (postId: string) => {
+    updateReaction(postId, (state) => {
+      const text = state.draft.trim()
+
+      if (!text) return state
+
+      return {
+        ...state,
+        comments: state.comments + 1,
+        draft: "",
+        commentsOpen: true,
+        localComments: [text, ...state.localComments],
+      }
+    })
+  }
+
+  const sharePost = async (postId: string) => {
+    const url = `${window.location.origin}/news/${postId}`
+
+    if (navigator.share) {
+      await navigator.share({ url })
+      return
+    }
+
+    await navigator.clipboard?.writeText(url)
+  }
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
@@ -164,28 +261,93 @@ export default function NewsPage() {
                   </div>
                   <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4 text-sm text-slate-400">
                     <div className="flex flex-wrap gap-2">
-                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-cyan-300 hover:text-slate-950">
+                      <button
+                        type="button"
+                        onClick={() => toggleVote(post.id, "like")}
+                        className={`inline-flex h-9 items-center gap-1 rounded-md px-3 transition ${
+                          reactions[post.id].vote === "like"
+                            ? "bg-cyan-300 text-slate-950"
+                            : "bg-slate-900 text-slate-300 hover:bg-cyan-300 hover:text-slate-950"
+                        }`}
+                      >
                         <ThumbsUp className="h-4 w-4" />
-                        {post.stats.likes}
+                        {reactions[post.id].likes}
                       </button>
-                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-rose-300 hover:text-slate-950">
+                      <button
+                        type="button"
+                        onClick={() => toggleVote(post.id, "dislike")}
+                        className={`inline-flex h-9 items-center gap-1 rounded-md px-3 transition ${
+                          reactions[post.id].vote === "dislike"
+                            ? "bg-rose-300 text-slate-950"
+                            : "bg-slate-900 text-slate-300 hover:bg-rose-300 hover:text-slate-950"
+                        }`}
+                      >
                         <ThumbsDown className="h-4 w-4" />
-                        {post.stats.dislikes}
+                        {reactions[post.id].dislikes}
                       </button>
-                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-white/15 hover:text-white">
+                      <button
+                        type="button"
+                        onClick={() => toggleComments(post.id)}
+                        className={`inline-flex h-9 items-center gap-1 rounded-md px-3 transition ${
+                          reactions[post.id].commentsOpen
+                            ? "bg-white/20 text-white"
+                            : "bg-slate-900 text-slate-300 hover:bg-white/15 hover:text-white"
+                        }`}
+                      >
                         <MessageCircle className="h-4 w-4" />
-                        {post.stats.comments}
+                        {reactions[post.id].comments}
                       </button>
-                      <button className="inline-flex h-9 items-center gap-1 rounded-md bg-slate-900 px-3 text-slate-300 transition hover:bg-white/15 hover:text-white">
+                      <button
+                        type="button"
+                        onClick={() => toggleRepost(post.id)}
+                        className={`inline-flex h-9 items-center gap-1 rounded-md px-3 transition ${
+                          reactions[post.id].reposted
+                            ? "bg-emerald-300 text-slate-950"
+                            : "bg-slate-900 text-slate-300 hover:bg-white/15 hover:text-white"
+                        }`}
+                      >
                         <Repeat2 className="h-4 w-4" />
-                        {post.stats.reposts}
+                        {reactions[post.id].reposts}
                       </button>
                     </div>
-                    <Button variant="ghost" size="sm" className="text-slate-300 hover:text-white">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      type="button"
+                      onClick={() => void sharePost(post.id)}
+                      className="text-slate-300 hover:text-white"
+                    >
                       <Share2 className="mr-2 h-4 w-4" />
                       {t("news.share")}
                     </Button>
                   </div>
+                  {reactions[post.id].commentsOpen && (
+                    <div className="mt-4 rounded-lg border border-white/10 bg-slate-950/70 p-3">
+                      <div className="flex gap-2">
+                        <input
+                          value={reactions[post.id].draft}
+                          onChange={(event) => setCommentDraft(post.id, event.target.value)}
+                          onKeyDown={(event) => {
+                            if (event.key === "Enter") addComment(post.id)
+                          }}
+                          placeholder={t("news.comment.placeholder")}
+                          className="min-w-0 flex-1 rounded-md border border-white/10 bg-slate-900 px-3 py-2 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300"
+                        />
+                        <Button type="button" onClick={() => addComment(post.id)} className="bg-cyan-300 text-slate-950 hover:bg-cyan-200">
+                          {t("news.comment.send")}
+                        </Button>
+                      </div>
+                      {reactions[post.id].localComments.length > 0 && (
+                        <div className="mt-3 grid gap-2">
+                          {reactions[post.id].localComments.map((comment, index) => (
+                            <p key={`${comment}-${index}`} className="rounded-md bg-white/5 px-3 py-2 text-sm text-slate-200">
+                              {comment}
+                            </p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <Link
