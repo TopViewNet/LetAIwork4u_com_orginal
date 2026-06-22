@@ -89,6 +89,9 @@ export default function ArticlePage() {
             </div>
             <div className="grid gap-4">
               <div className="overflow-hidden rounded-lg border bg-background">
+                <div className="border-b px-4 py-3">
+                  <p className="text-sm font-semibold">{t("news.hermes.video.title")}</p>
+                </div>
                 <img src="/hermes/hermes-agent-teaser.svg" alt="HERMES AI Agent Teaser" className="w-full" />
               </div>
               <div className="grid gap-2 text-sm leading-6 text-muted-foreground">
@@ -96,6 +99,9 @@ export default function ArticlePage() {
                 <p>{t("news.hermes.video.script.2")}</p>
                 <p>{t("news.hermes.video.script.3")}</p>
               </div>
+              <Button asChild className="w-fit">
+                <Link href="/contact?product=HERMES%20AI%20Agent">{t("news.hermes.cta")}</Link>
+              </Button>
             </div>
           </section>
         )}
