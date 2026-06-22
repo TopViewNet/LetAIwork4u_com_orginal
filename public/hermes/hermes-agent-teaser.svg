@@ -1,0 +1,65 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">HERMES AI Agent Teaser</title>
+  <desc id="desc">Animated teaser storyboard for HERMES, a Telegram-controlled AI agent on Hetzner Cloud.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="48%" r="62%">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity=".28"/>
+      <stop offset=".46" stop-color="#0F172A" stop-opacity=".84"/>
+      <stop offset="1" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="213" y1="101" x2="1016" y2="594" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset=".2" stop-color="#94A3B8"/>
+      <stop offset=".52" stop-color="#22D3EE"/>
+      <stop offset=".78" stop-color="#64748B"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <style>
+      .slide { opacity: 0; animation: show 15s infinite; }
+      .s1 { animation-delay: 0s; }
+      .s2 { animation-delay: 5s; }
+      .s3 { animation-delay: 10s; }
+      .pulse { animation: pulse 3s ease-in-out infinite; transform-origin: center; }
+      @keyframes show {
+        0%, 31% { opacity: 1; transform: translateY(0); }
+        34%, 100% { opacity: 0; transform: translateY(18px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: .42; transform: scale(1); }
+        50% { opacity: .9; transform: scale(1.04); }
+      }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+  <circle class="pulse" cx="194" cy="170" r="110" stroke="#22D3EE" stroke-width="2"/>
+  <circle class="pulse" cx="1090" cy="546" r="142" stroke="#991B1B" stroke-width="2" opacity=".55"/>
+  <path d="M114 592C298 483 445 454 621 506C800 559 973 515 1164 384" stroke="url(#metal)" stroke-width="3" stroke-linecap="round" opacity=".44"/>
+  <text x="80" y="104" fill="#E2E8F0" font-family="Arial Black, Arial, sans-serif" font-size="34" letter-spacing="7">HERMES AI AGENT</text>
+  <text x="80" y="150" fill="#67E8F9" font-family="Arial, sans-serif" font-size="22">steuerbar per Telegram · installiert auf Hetzner Cloud</text>
+
+  <g class="slide s1">
+    <text x="80" y="292" fill="#F8FAFC" font-family="Arial Black, Arial, sans-serif" font-size="68">Ein eigener AI-Agent</text>
+    <text x="84" y="350" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="30">fuer Management, Projekte, Recherche und Automatisierung.</text>
+  </g>
+
+  <g class="slide s2">
+    <text x="80" y="292" fill="#F8FAFC" font-family="Arial Black, Arial, sans-serif" font-size="66">Kontrolliert statt blind autonom</text>
+    <text x="84" y="350" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="30">Telegram-Steuerung, eigene Cloud, klare Uebergabe.</text>
+  </g>
+
+  <g class="slide s3">
+    <text x="80" y="292" fill="#F8FAFC" font-family="Arial Black, Arial, sans-serif" font-size="66">Pilot-Setup anfragen</text>
+    <text x="84" y="350" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="30">LetAIwork4u richtet HERMES individuell ein.</text>
+  </g>
+
+  <g transform="translate(790 170)">
+    <rect x="0" y="0" width="360" height="250" rx="18" fill="#020617" stroke="#334155"/>
+    <rect x="24" y="28" width="206" height="24" rx="12" fill="#0F172A"/>
+    <rect x="24" y="75" width="300" height="44" rx="14" fill="#075985"/>
+    <text x="45" y="104" fill="#ECFEFF" font-family="Arial, sans-serif" font-size="18">/research Wettbewerber</text>
+    <rect x="86" y="140" width="238" height="44" rx="14" fill="#1E293B"/>
+    <text x="108" y="169" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="18">Analyse gestartet.</text>
+    <rect x="24" y="205" width="300" height="2" fill="#22D3EE" opacity=".55"/>
+  </g>
+  <text x="80" y="626" fill="#94A3B8" font-family="Arial, sans-serif" font-size="22">Setup · Sicherheit · Einweisung · Uebergabe · optionaler Support</text>
+</svg>

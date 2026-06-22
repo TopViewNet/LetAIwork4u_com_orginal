@@ -8,6 +8,14 @@ import { useLanguage } from "@/contexts/language-context"
 
 const featuredPosts = [
   {
+    id: "hermes-telegram-ai-agent",
+    typeKey: "news.type.offer",
+    author: "LetAIwork4u Lab",
+    dateKey: "news.date.june2026",
+    tags: ["news.tag.hermes", "news.tag.aiAgent", "news.tag.telegram", "news.tag.hetzner"],
+    stats: { likes: 9, comments: 2, reposts: 1 },
+  },
+  {
     id: "letaiwork4u-platform-roadmap",
     typeKey: "news.type.projectUpdate",
     author: "LetAIwork4u Lab",
@@ -59,7 +67,7 @@ export default function NewsPage() {
             </div>
             <div className="mt-5 grid grid-cols-3 gap-3 text-center">
               <div className="rounded-md bg-slate-900 p-3">
-                <p className="text-2xl font-bold">3</p>
+                <p className="text-2xl font-bold">4</p>
                 <p className="text-xs text-slate-400">{t("news.stats.feeds")}</p>
               </div>
               <div className="rounded-md bg-slate-900 p-3">

@@ -9,6 +9,12 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 
 const articles = {
+  "hermes-telegram-ai-agent": {
+    typeKey: "news.type.offer",
+    author: "LetAIwork4u Lab",
+    dateKey: "news.date.june2026",
+    tags: ["news.tag.hermes", "news.tag.aiAgent", "news.tag.telegram", "news.tag.hetzner"],
+  },
   "letaiwork4u-platform-roadmap": {
     typeKey: "news.type.projectUpdate",
     author: "LetAIwork4u Lab",
@@ -75,6 +81,24 @@ export default function ArticlePage() {
             <p key={paragraph}>{t(`${paragraph}.${id}`)}</p>
           ))}
         </article>
+
+        {id === "hermes-telegram-ai-agent" && (
+          <section className="mt-10 grid gap-5 rounded-lg border bg-muted/40 p-5 md:grid-cols-[0.8fr_1.2fr]">
+            <div className="overflow-hidden rounded-lg border bg-background">
+              <img src="/hermes/hermes-logo.jpg" alt="HERMES AI Agent Logo" className="h-full w-full object-cover" />
+            </div>
+            <div className="grid gap-4">
+              <div className="overflow-hidden rounded-lg border bg-background">
+                <img src="/hermes/hermes-agent-teaser.svg" alt="HERMES AI Agent Teaser" className="w-full" />
+              </div>
+              <div className="grid gap-2 text-sm leading-6 text-muted-foreground">
+                <p>{t("news.hermes.video.script.1")}</p>
+                <p>{t("news.hermes.video.script.2")}</p>
+                <p>{t("news.hermes.video.script.3")}</p>
+              </div>
+            </div>
+          </section>
+        )}
 
         <div className="mt-12 rounded-lg bg-muted p-6">
           <h3 className="text-xl font-bold">{t("news.detail.ctaTitle")}</h3>
