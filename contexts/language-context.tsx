@@ -250,7 +250,7 @@ const defaultTranslations: Record<string, string> = {
   "contact.enterpriseDesc": "Fuer groessere Vorhaben erstellen wir ein passendes Projekt- und Integrationskonzept.",
   "contact.exploreSolutions": "Loesungen ansehen",
   "contact.googleReviewCta": "Auf Google bewerten",
-  "contact.googleReviewDesc": "Oeffnet die Google-Bewertungsseite in einem neuen Tab.",
+  "contact.googleReviewDesc": "Öffnet die Google-Bewertungsseite in einem neuen Tab.",
   "products.title": "Produkte",
   "products.subtitle": "Konkrete Produkte aus dem LetAIwork4u Oekosystem: LegalTech, beA-Kommunikation, Voicebots und neue digitale Plattformen.",
   "products.hero.badge": "Produktportfolio",
