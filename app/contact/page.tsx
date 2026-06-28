@@ -8,8 +8,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Phone, Mail, Clock, CheckCircle } from "lucide-react"
+import { Phone, Mail, Clock, CheckCircle, Star } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+
+const googleReviewUrl = "https://www.google.com/search?q=LetAIwork4u+Google+Bewertung"
 
 const contactProducts = [
   { value: "beA4Outlook", labelKey: "contact.interest.bea4outlook" },
@@ -300,10 +302,17 @@ export default function ContactPage() {
 
               <div className="mt-8 pt-6 border-t border-gray-800">
                 <p className="text-white/80">{t("contact.enterpriseDesc")}</p>
-                <div className="mt-4">
+                <div className="mt-4 grid gap-3">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" asChild>
                     <a href="/pricing">{t("contact.exploreSolutions")}</a>
                   </Button>
+                  <Button variant="outline" className="w-full border-white/20 bg-white/5 text-white hover:bg-white/10" asChild>
+                    <a href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
+                      <Star className="mr-2 h-4 w-4 text-yellow-300" />
+                      {t("contact.googleReviewCta")}
+                    </a>
+                  </Button>
+                  <p className="text-xs leading-5 text-white/55">{t("contact.googleReviewDesc")}</p>
                 </div>
               </div>
             </div>
