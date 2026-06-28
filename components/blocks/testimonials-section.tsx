@@ -8,32 +8,32 @@ export function TestimonialsSection() {
   const { t } = useLanguage()
   const testimonials = [
     {
-      name: "Alex Johnson",
+      name: t("testimonials.0.name"),
       role: t("testimonials.0.role"),
       content: t("testimonials.0.content"),
-      avatar: "/diverse-group-city.png",
-      initials: "AJ",
+      avatar: "",
+      initials: "AS",
     },
     {
-      name: "Samantha Lee",
+      name: t("testimonials.1.name"),
       role: t("testimonials.1.role"),
       content: t("testimonials.1.content"),
-      avatar: "/contemplative-artist.png",
-      initials: "SL",
+      avatar: "",
+      initials: "VB",
     },
     {
-      name: "Michael Chen",
+      name: t("testimonials.2.name"),
       role: t("testimonials.2.role"),
       content: t("testimonials.2.content"),
-      avatar: "/contemplative-man.png",
-      initials: "MC",
+      avatar: "",
+      initials: "HE",
     },
     {
-      name: "Emily Rodriguez",
+      name: t("testimonials.3.name"),
       role: t("testimonials.3.role"),
       content: t("testimonials.3.content"),
-      avatar: "/diverse-group-city.png",
-      initials: "ER",
+      avatar: "",
+      initials: "PL",
     },
   ]
 
@@ -53,7 +53,7 @@ export function TestimonialsSection() {
             <Card key={index} className="h-full">
               <CardHeader className="flex flex-row items-center gap-4 pb-2">
                 <Avatar>
-                  <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
+                  {testimonial.avatar ? <AvatarImage src={testimonial.avatar} alt={testimonial.name} /> : null}
                   <AvatarFallback>{testimonial.initials}</AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col">

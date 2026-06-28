@@ -165,12 +165,12 @@ export const platforms: Platform[] = [
   },
   {
     slug: "aviation",
-    name: "Ihr Projekt",
-    eyebrow: "Neue Plattformidee",
+    name: "Kundenprojekt",
+    eyebrow: "Projektstrecke",
     status: "planned",
-    headline: "Hier koennte Ihr digitales Produkt, Ihre Plattform oder Ihre AI-Idee entstehen.",
+    headline: "Aus Ihrer Idee wird ein sichtbares digitales Produkt mit klarer Struktur.",
     summary:
-      "Diese Kachel steht bewusst offen fuer neue Kundenprojekte: von der hochwertigen Webseite ueber Web-App und KI-Automation bis zur eigenen Plattform.",
+      "Diese Projektstrecke ist fuer neue Kundenideen gedacht: von der hochwertigen Webseite ueber Web-App und KI-Automation bis zur eigenen Plattform.",
     audience: "Unternehmer, Kanzleien, Mittelstand, Immobilienprofis, Handwerk, Coaches, Spezialisten und Gruender mit einer konkreten Idee.",
     promise: "Aus einer Idee wird ein sichtbares, strukturiertes und professionell positioniertes digitales Produkt.",
     accent: "from-white via-cyan-200 to-blue-600",
