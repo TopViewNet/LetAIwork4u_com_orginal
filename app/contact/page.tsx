@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Phone, Mail, Clock, CheckCircle, Star } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
-const googleReviewUrl = "https://www.google.com/search?q=LetAIwork4u+Google+Bewertung"
+const googleReviewUrl = "https://g.page/r/CY-c07GObxNZEBM/review"
 
 const contactProducts = [
   { value: "beA4Outlook", labelKey: "contact.interest.bea4outlook" },
